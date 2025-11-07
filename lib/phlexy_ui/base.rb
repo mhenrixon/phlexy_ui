@@ -8,7 +8,14 @@ module PhlexyUI
     end
 
     class << self
-      attr_reader :modifiers
+      def modifiers
+        @modifiers ||= {}
+        if superclass.respond_to?(:modifiers, true)
+          superclass.send(:modifiers).merge(@modifiers)
+        else
+          @modifiers
+        end
+      end
 
       private
 
