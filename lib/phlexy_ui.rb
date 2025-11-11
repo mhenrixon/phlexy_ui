@@ -3,15 +3,13 @@ require "zeitwerk"
 require_relative "phlexy_ui/version"
 require_relative "phlexy_ui/updated_at"
 
-loader = Zeitwerk::Loader.for_gem
-loader.inflector.inflect(
-  "phlexy_ui" => "PhlexyUI"
-)
-loader.ignore("#{__dir__}/phlexy_ui/updated_at.rb")
-loader.setup # ready!
-loader.load_file("#{__dir__}/phlexy_ui/base.rb")
-
 module PhlexyUI
+  LOADER = Zeitwerk::Loader.for_gem
+  LOADER.inflector.inflect("phlexy_ui" => "PhlexyUI")
+  LOADER.ignore("#{__dir__}/phlexy_ui/updated_at.rb")
+  LOADER.setup
+  LOADER.load_file("#{__dir__}/phlexy_ui/base.rb")
+
   extend Configurable
   extend Phlex::Kit
 
@@ -62,6 +60,20 @@ module PhlexyUI
     # @return [Boolean] true if registered
     def registered?(component_name)
       registry.registered?(component_name)
+    end
+
+    # Eager load all components to register them
+    # Call this in Rails initializer or before using the registry
+    #
+    # @return [void]
+    #
+    # @example In a Rails initializer
+    #   PhlexyUI.eager_load!
+    def eager_load!
+      return if @eager_loaded
+
+      LOADER.eager_load
+      @eager_loaded = true
     end
   end
 end
