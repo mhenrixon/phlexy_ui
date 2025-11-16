@@ -3,6 +3,8 @@
 module DaisyUI
   # @component html class="join"
   class Join < Base
+    self.component_class = :join
+
     def initialize(*, as: :div, **)
       super
     end

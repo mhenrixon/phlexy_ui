@@ -3,6 +3,8 @@
 module DaisyUI
   # @component html class="collapse"
   class Collapse < Base
+    self.component_class = :collapse
+
     def initialize(*, as: :div, **)
       super
     end
