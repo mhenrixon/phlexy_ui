@@ -9,8 +9,8 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def item(**opts, &)
-      div(class: component_classes("carousel-item", options: opts), **opts, &)
+    def item(**options, &)
+      div(class: component_classes("carousel-item", options:), **options, &)
     end
 
     register_modifiers(

@@ -9,12 +9,12 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def camera(**opts, &)
-      div(class: component_classes("mockup-phone-camera", options: opts), **opts, &)
+    def camera(**options, &)
+      div(class: component_classes("mockup-phone-camera", options:), **options, &)
     end
 
-    def display(**opts, &)
-      div(class: component_classes("mockup-phone-display", options: opts), **opts, &)
+    def display(**options, &)
+      div(class: component_classes("mockup-phone-display", options:), **options, &)
     end
   end
 end

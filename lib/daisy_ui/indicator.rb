@@ -9,8 +9,8 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def item(**opts, &)
-      span(class: component_classes("indicator-item", options: opts), **opts, &)
+    def item(**options, &)
+      span(class: component_classes("indicator-item", options:), **options, &)
     end
 
     register_modifiers(

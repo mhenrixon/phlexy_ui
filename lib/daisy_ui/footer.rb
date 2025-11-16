@@ -13,8 +13,8 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def title(**opts, &)
-      div(class: component_classes("footer-title", options: opts), **opts, &)
+    def title(**options, &)
+      div(class: component_classes("footer-title", options:), **options, &)
     end
 
     register_modifiers(

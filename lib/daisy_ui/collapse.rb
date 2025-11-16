@@ -9,12 +9,12 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def title(**opts, &)
-      div(class: component_classes("collapse-title", options: opts), **opts, &)
+    def title(**options, &)
+      div(class: component_classes("collapse-title", options:), **options, &)
     end
 
-    def content(**opts, &)
-      div(class: component_classes("collapse-content", options: opts), **opts, &)
+    def content(**options, &)
+      div(class: component_classes("collapse-content", options:), **options, &)
     end
 
     register_modifiers(

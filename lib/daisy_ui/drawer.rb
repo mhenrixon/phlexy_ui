@@ -13,21 +13,21 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def toggle(**opts, &)
-      toggle_classes = component_classes("drawer-toggle", options: opts)
-      input(id:, type: :checkbox, class: toggle_classes, **opts, &)
+    def toggle(**options, &)
+      toggle_classes = component_classes("drawer-toggle", options:)
+      input(id:, type: :checkbox, class: toggle_classes, **options, &)
     end
 
     def content(as: :div, **options, &)
-      public_send(as, class: component_classes("drawer-content", options: options), **options, &)
+      public_send(as, class: component_classes("drawer-content", options:), **options, &)
     end
 
     def side(as: :div, **options, &)
-      public_send(as, class: component_classes("drawer-side", options: options), **options, &)
+      public_send(as, class: component_classes("drawer-side", options:), **options, &)
     end
 
     def overlay(**options, &)
-      overlay_classes = component_classes("drawer-overlay", options: options)
+      overlay_classes = component_classes("drawer-overlay", options:)
       label(for: id, class: overlay_classes, **options, &)
     end
 

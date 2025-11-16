@@ -25,15 +25,15 @@ module DaisyUI
       end
     end
 
-    def content(*, **opts, &block)
+    def content(*, **options, &block)
       unless id
         raise ArgumentError,
           "You must pass an id to Tabs#new if you want to add content"
       end
 
       @content = -> do
-        content_classes = component_classes("tab-content", options: opts)
-        div role: :tabpanel, class: content_classes, **opts, &block
+        content_classes = component_classes("tab-content", options:)
+        div role: :tabpanel, class: content_classes, **options, &block
       end
     end
   end

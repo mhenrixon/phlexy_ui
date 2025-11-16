@@ -9,8 +9,8 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def toolbar(**opts, &)
-      div(class: component_classes("mockup-browser-toolbar", options: opts), **opts, &)
+    def toolbar(**options, &)
+      div(class: component_classes("mockup-browser-toolbar", options:), **options, &)
     end
   end
 end

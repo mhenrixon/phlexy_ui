@@ -13,8 +13,8 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def row(**opts, &)
-      li(class: component_classes("list-row", options: opts), **opts, &)
+    def row(**options, &)
+      li(class: component_classes("list-row", options:), **options, &)
     end
 
     register_modifiers(

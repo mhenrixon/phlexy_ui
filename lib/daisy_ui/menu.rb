@@ -8,8 +8,8 @@ module DaisyUI
       ul(class: classes, **attributes, &)
     end
 
-    def title(*, as: :li, **opts, &)
-      public_send(as, class: component_classes("menu-title", options: opts), **opts, &)
+    def title(*, as: :li, **options, &)
+      public_send(as, class: component_classes("menu-title", options:), **options, &)
     end
 
     def item(*, **, &)

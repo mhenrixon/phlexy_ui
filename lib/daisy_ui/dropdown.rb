@@ -20,23 +20,23 @@ module DaisyUI
       end
     end
 
-    def content(*, as: :div, **opts, &)
-      content_classes = component_classes("dropdown-content", options: opts)
+    def content(*, as: :div, **options, &)
+      content_classes = component_classes("dropdown-content", options:)
 
       if modifiers.include?(:tap_to_close)
-        render_as(*, as:, class: content_classes, **opts, &)
+        render_as(*, as:, class: content_classes, **options, &)
       else
-        render_as(*, as:, tabindex: 0, class: content_classes, **opts, &)
+        render_as(*, as:, tabindex: 0, class: content_classes, **options, &)
       end
     end
 
-    def menu(*, **opts, &)
-      menu_classes = component_classes("dropdown-content", options: opts)
+    def menu(*, **options, &)
+      menu_classes = component_classes("dropdown-content", options:)
 
       if modifiers.include?(:tap_to_close)
-        render Menu.new(*, class: menu_classes, **opts, &)
+        render Menu.new(*, class: menu_classes, **options, &)
       else
-        render Menu.new(*, tabindex: 0, class: menu_classes, **opts, &)
+        render Menu.new(*, tabindex: 0, class: menu_classes, **options, &)
       end
     end
 

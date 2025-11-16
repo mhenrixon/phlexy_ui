@@ -13,8 +13,8 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def legend(**opts, &)
-      super(class: component_classes("fieldset-legend", options: opts), **opts, &)
+    def legend(**options, &)
+      super(class: component_classes("fieldset-legend", options:), **options, &)
     end
   end
 end

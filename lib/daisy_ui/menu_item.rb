@@ -10,14 +10,14 @@ module DaisyUI
     end
 
     def title(*, **options, &block)
-      h2(class: component_classes("menu-title", options: options), **options, &block)
+      h2(class: component_classes("menu-title", options:), **options, &block)
     end
 
-    def submenu(*modifiers, **opts, &)
+    def submenu(*modifiers, **options, &)
       if modifiers.include?(:collapsible)
-        render CollapsibleSubMenu.new(*modifiers, **opts, &)
+        render CollapsibleSubMenu.new(*modifiers, **options, &)
       else
-        render SubMenu.new(*modifiers, **opts, &)
+        render SubMenu.new(*modifiers, **options, &)
       end
     end
 

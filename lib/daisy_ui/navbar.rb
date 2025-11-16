@@ -12,16 +12,16 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def start(*, as: :div, **opts, &)
-      public_send(as, class: component_classes("navbar-start", options: opts), **opts, &)
+    def start(*, as: :div, **options, &)
+      public_send(as, class: component_classes("navbar-start", options:), **options, &)
     end
 
-    def center(*, as: :div, **opts, &)
-      public_send(as, class: component_classes("navbar-center", options: opts), **opts, &)
+    def center(*, as: :div, **options, &)
+      public_send(as, class: component_classes("navbar-center", options:), **options, &)
     end
 
-    def end(*, as: :div, **opts, &)
-      public_send(as, class: component_classes("navbar-end", options: opts), **opts, &)
+    def end(*, as: :div, **options, &)
+      public_send(as, class: component_classes("navbar-end", options:), **options, &)
     end
 
     register_modifiers(

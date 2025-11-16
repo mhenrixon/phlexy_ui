@@ -9,8 +9,8 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def item(**opts, &)
-      div(class: component_classes("join-item", options: opts), **opts, &)
+    def item(**options, &)
+      div(class: component_classes("join-item", options:), **options, &)
     end
 
     register_modifiers(

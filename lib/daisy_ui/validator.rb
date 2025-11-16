@@ -19,7 +19,7 @@ module DaisyUI
     end
 
     def hint(**options, &block)
-      @hint = -> { p(class: component_classes("validator-hint", options: options), **options, &block) }
+      @hint = -> { p(class: component_classes("validator-hint", options:), **options, &block) }
     end
   end
 end

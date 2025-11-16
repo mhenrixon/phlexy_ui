@@ -13,12 +13,12 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def step(**opts, &)
-      li(class: component_classes("step", options: opts), **opts, &)
+    def step(**options, &)
+      li(class: component_classes("step", options:), **options, &)
     end
 
-    def icon(**opts, &)
-      div(class: component_classes("step-icon", options: opts), **opts, &)
+    def icon(**options, &)
+      div(class: component_classes("step-icon", options:), **options, &)
     end
 
     register_modifiers(

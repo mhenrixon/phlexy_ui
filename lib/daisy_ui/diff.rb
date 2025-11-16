@@ -13,16 +13,16 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def item_1(**opts, &)
-      div(class: component_classes("diff-item-1", options: opts), **opts, &)
+    def item_1(**options, &)
+      div(class: component_classes("diff-item-1", options:), **options, &)
     end
 
-    def item_2(**opts, &)
-      div(class: component_classes("diff-item-2", options: opts), **opts, &)
+    def item_2(**options, &)
+      div(class: component_classes("diff-item-2", options:), **options, &)
     end
 
-    def resizer(**opts, &)
-      div(class: component_classes("diff-resizer", options: opts), **opts, &)
+    def resizer(**options, &)
+      div(class: component_classes("diff-resizer", options:), **options, &)
     end
   end
 end

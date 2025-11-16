@@ -9,28 +9,28 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def item(**opts, &)
-      div(class: component_classes("stat", options: opts), **opts, &)
+    def item(**options, &)
+      div(class: component_classes("stat", options:), **options, &)
     end
 
-    def title(**opts, &)
-      div(class: component_classes("stat-title", options: opts), **opts, &)
+    def title(**options, &)
+      div(class: component_classes("stat-title", options:), **options, &)
     end
 
-    def value(**opts, &)
-      div(class: component_classes("stat-value", options: opts), **opts, &)
+    def value(**options, &)
+      div(class: component_classes("stat-value", options:), **options, &)
     end
 
-    def desc(**opts, &)
-      div(class: component_classes("stat-desc", options: opts), **opts, &)
+    def desc(**options, &)
+      div(class: component_classes("stat-desc", options:), **options, &)
     end
 
-    def figure(**opts, &)
-      div(class: component_classes("stat-figure", options: opts), **opts, &)
+    def figure(**options, &)
+      div(class: component_classes("stat-figure", options:), **options, &)
     end
 
-    def actions(**opts, &)
-      div(class: component_classes("stat-actions", options: opts), **opts, &)
+    def actions(**options, &)
+      div(class: component_classes("stat-actions", options:), **options, &)
     end
 
     register_modifiers(

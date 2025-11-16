@@ -9,20 +9,20 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def image(**opts, &)
-      div(class: component_classes("chat-image", options: opts), **opts, &)
+    def image(**options, &)
+      div(class: component_classes("chat-image", options:), **options, &)
     end
 
-    def header(**opts, &)
-      div(class: component_classes("chat-header", options: opts), **opts, &)
+    def header(**options, &)
+      div(class: component_classes("chat-header", options:), **options, &)
     end
 
-    def bubble(**opts, &)
-      div(class: component_classes("chat-bubble", options: opts), **opts, &)
+    def bubble(**options, &)
+      div(class: component_classes("chat-bubble", options:), **options, &)
     end
 
-    def footer(**opts, &)
-      div(class: component_classes("chat-footer", options: opts), **opts, &)
+    def footer(**options, &)
+      div(class: component_classes("chat-footer", options:), **options, &)
     end
 
     register_modifiers(

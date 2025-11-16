@@ -9,8 +9,8 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def label(**opts, &)
-      span(class: component_classes("dock-label", options: opts), **opts, &)
+    def label(**options, &)
+      span(class: component_classes("dock-label", options:), **options, &)
     end
 
     register_modifiers(

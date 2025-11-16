@@ -13,16 +13,16 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def start(**opts, &)
-      div(class: component_classes("timeline-start", options: opts), **opts, &)
+    def start(**options, &)
+      div(class: component_classes("timeline-start", options:), **options, &)
     end
 
-    def middle(**opts, &)
-      div(class: component_classes("timeline-middle", options: opts), **opts, &)
+    def middle(**options, &)
+      div(class: component_classes("timeline-middle", options:), **options, &)
     end
 
-    def end(**opts, &)
-      div(class: component_classes("timeline-end", options: opts), **opts, &)
+    def end(**options, &)
+      div(class: component_classes("timeline-end", options:), **options, &)
     end
 
     register_modifiers(

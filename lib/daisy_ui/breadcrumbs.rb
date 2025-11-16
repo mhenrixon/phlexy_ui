@@ -10,8 +10,8 @@ module DaisyUI
       end
     end
 
-    def crumb(**opts, &)
-      li(class: component_classes(options: opts), **opts, &)
+    def crumb(**options, &)
+      li(class: component_classes(options: options), **options, &)
     end
     alias_method :breadcrumb, :crumb
     alias_method :item, :crumb

@@ -9,12 +9,12 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def close(**opts, &)
-      div(class: component_classes("fab-close", options: opts), **opts, &)
+    def close(**options, &)
+      div(class: component_classes("fab-close", options:), **options, &)
     end
 
-    def main_action(**opts, &)
-      div(class: component_classes("fab-main-action", options: opts), **opts, &)
+    def main_action(**options, &)
+      div(class: component_classes("fab-main-action", options:), **options, &)
     end
 
     register_modifiers(

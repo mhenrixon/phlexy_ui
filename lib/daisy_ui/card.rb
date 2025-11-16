@@ -12,16 +12,16 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def body(**opts, &)
-      div(class: component_classes("card-body", options: opts), **opts, &)
+    def body(**options, &)
+      div(class: component_classes("card-body", options:), **options, &)
     end
 
-    def title(**opts, &)
-      header(class: component_classes("card-title", options: opts), **opts, &)
+    def title(**options, &)
+      header(class: component_classes("card-title", options:), **options, &)
     end
 
-    def actions(**opts, &)
-      footer(class: component_classes("card-actions", options: opts), **opts, &)
+    def actions(**options, &)
+      footer(class: component_classes("card-actions", options:), **options, &)
     end
 
     register_modifiers(

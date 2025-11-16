@@ -17,20 +17,20 @@ module DaisyUI
       end
     end
 
-    def body(*, as: :div, **opts, &)
-      public_send(as, class: component_classes("modal-box", options: opts), **opts, &)
+    def body(*, as: :div, **options, &)
+      public_send(as, class: component_classes("modal-box", options:), **options, &)
     end
 
-    def action(*, as: :div, **opts, &block)
-      action_classes = component_classes("modal-action", options: opts)
-      public_send(as, class: action_classes, **opts) do
+    def action(*, as: :div, **options, &block)
+      action_classes = component_classes("modal-action", options:)
+      public_send(as, class: action_classes, **options) do
         block&.call(self)
       end
     end
 
-    def backdrop(*, **opts, &)
-      backdrop_classes = component_classes("modal-backdrop", options: opts)
-      form method: :dialog, class: backdrop_classes, **opts do
+    def backdrop(*, **options, &)
+      backdrop_classes = component_classes("modal-backdrop", options:)
+      form method: :dialog, class: backdrop_classes, **options do
         button
       end
     end

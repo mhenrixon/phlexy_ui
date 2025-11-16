@@ -9,9 +9,9 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def reset(**opts, &)
-      reset_classes = component_classes("filter-reset", options: opts)
-      input(type: :radio, class: reset_classes, **opts, &)
+    def reset(**options, &)
+      reset_classes = component_classes("filter-reset", options:)
+      input(type: :radio, class: reset_classes, **options, &)
     end
   end
 end

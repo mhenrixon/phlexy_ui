@@ -9,12 +9,12 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def content(**opts, &)
-      div(class: component_classes("hero-content", options: opts), **opts, &)
+    def content(**options, &)
+      div(class: component_classes("hero-content", options:), **options, &)
     end
 
-    def overlay(**opts, &)
-      div(class: component_classes("hero-overlay", options: opts), **opts, &)
+    def overlay(**options, &)
+      div(class: component_classes("hero-overlay", options:), **options, &)
     end
   end
 end

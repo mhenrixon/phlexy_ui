@@ -13,16 +13,16 @@ module DaisyUI
       public_send(as, class: classes, **attributes, &)
     end
 
-    def on(**opts, &)
-      div(class: component_classes("swap-on", options: opts), **opts, &)
+    def on(**options, &)
+      div(class: component_classes("swap-on", options:), **options, &)
     end
 
-    def off(**opts, &)
-      div(class: component_classes("swap-off", options: opts), **opts, &)
+    def off(**options, &)
+      div(class: component_classes("swap-off", options:), **options, &)
     end
 
-    def indeterminate(**opts, &)
-      div(class: component_classes("swap-indeterminate", options: opts), **opts, &)
+    def indeterminate(**options, &)
+      div(class: component_classes("swap-indeterminate", options:), **options, &)
     end
 
     register_modifiers(
