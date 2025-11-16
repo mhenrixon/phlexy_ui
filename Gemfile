@@ -9,4 +9,5 @@ group :development do
   gem "debug"
   gem "rake"
   gem "super_diff"
+  gem "gem-release"
 end

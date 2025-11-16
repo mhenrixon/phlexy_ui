@@ -12,5 +12,5 @@ end
 
 RSpec.configure do |config|
   config.include PhlexHelpers
-  config.include PhlexyUI
+  config.include DaisyUI
 end

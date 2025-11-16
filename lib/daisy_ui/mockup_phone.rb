@@ -1,0 +1,24 @@
+# frozen_string_literal: true
+
+module DaisyUI
+  # @component html class="mockup-phone"
+  class MockupPhone < Base
+    self.component_class = "mockup-phone"
+
+    def initialize(*, as: :div, **)
+      super
+    end
+
+    def view_template(&)
+      public_send(as, class: classes, **attributes, &)
+    end
+
+    def camera(**opts, &)
+      div(class: component_classes("mockup-phone-camera", options: opts), **opts, &)
+    end
+
+    def display(**opts, &)
+      div(class: component_classes("mockup-phone-display", options: opts), **opts, &)
+    end
+  end
+end
