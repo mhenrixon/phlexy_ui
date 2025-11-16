@@ -28,7 +28,10 @@ module PhlexyUI
     end
 
     def initialize(*modifiers, as: :div, id: nil, **options)
-      @modifiers = modifiers
+      # Extract boolean modifiers from options (e.g., primary: true, secondary: false)
+      boolean_modifiers = extract_boolean_modifiers(options)
+
+      @modifiers = modifiers + boolean_modifiers
       @as = as
       @id = id
       @options = options
@@ -81,6 +84,19 @@ module PhlexyUI
 
     def modifier_map
       self.class.modifiers || {}
+    end
+
+    def extract_boolean_modifiers(options)
+      modifier_keys = modifier_map.keys
+      boolean_mods = []
+
+      modifier_keys.each do |key|
+        if options.key?(key) && (options[key] == true || options[key] == false)
+          boolean_mods << key if options.delete(key) == true
+        end
+      end
+
+      boolean_mods
     end
 
     def apply_prefix(css_class)
