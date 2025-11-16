@@ -5,10 +5,6 @@ module DaisyUI
   class Pagination < Base
     self.component_class = "join"
 
-    def initialize(*, as: :div, **)
-      super
-    end
-
     def view_template(&)
       public_send(as, class: classes, **attributes, &)
     end

@@ -4,10 +4,6 @@ module DaisyUI
   class Breadcrumbs < Base
     self.component_class = :breadcrumbs
 
-    def initialize(*, as: :div, **)
-      super
-    end
-
     def view_template(&)
       public_send(as, class: classes, **attributes) do
         ul(&)

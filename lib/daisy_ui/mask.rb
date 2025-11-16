@@ -4,10 +4,6 @@ module DaisyUI
   class Mask < Base
     self.component_class = :mask
 
-    def initialize(*, as: :div, **)
-      super
-    end
-
     def view_template(&)
       public_send(as, class: classes, **attributes, &)
     end

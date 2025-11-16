@@ -4,10 +4,6 @@ module DaisyUI
   class Alert < Base
     self.component_class = :alert
 
-    def initialize(*, as: :div, **)
-      super
-    end
-
     def view_template(&)
       public_send(as, role: :alert, class: classes, **attributes, &)
     end

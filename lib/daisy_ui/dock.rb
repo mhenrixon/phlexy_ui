@@ -5,10 +5,6 @@ module DaisyUI
   class Dock < Base
     self.component_class = :dock
 
-    def initialize(*, as: :div, **)
-      super
-    end
-
     def view_template(&)
       public_send(as, class: classes, **attributes, &)
     end

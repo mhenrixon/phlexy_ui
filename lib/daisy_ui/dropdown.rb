@@ -4,10 +4,6 @@ module DaisyUI
   class Dropdown < Base
     self.component_class = :dropdown
 
-    def initialize(*, as: :div, **)
-      super
-    end
-
     def view_template(&)
       if modifiers.include?(:tap_to_close)
         details(class: classes, **attributes, &)
