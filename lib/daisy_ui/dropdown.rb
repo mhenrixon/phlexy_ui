@@ -4,8 +4,12 @@ module DaisyUI
   class Dropdown < Base
     self.component_class = :dropdown
 
+    def initialize(*modifiers, as: :detail, id: nil, **options)
+      super
+    end
+
     def view_template(&)
-      if modifiers.include?(:tap_to_close)
+      if tap_to_close?
         details(class: classes, **attributes, &)
       else
         public_send(as, class: classes, **attributes, &)
@@ -13,7 +17,7 @@ module DaisyUI
     end
 
     def button(*, **, &)
-      if modifiers.include?(:tap_to_close)
+      if tap_to_close?
         render Button.new(*, as: :summary, **, &)
       else
         render Button.new(*, as: :div, role: :button, tabindex: 0, **, &)
@@ -23,7 +27,7 @@ module DaisyUI
     def content(*, as: :div, **options, &)
       content_classes = component_classes("dropdown-content", options:)
 
-      if modifiers.include?(:tap_to_close)
+      if tap_to_close?
         render_as(*, as:, class: content_classes, **options, &)
       else
         render_as(*, as:, tabindex: 0, class: content_classes, **options, &)
@@ -33,11 +37,15 @@ module DaisyUI
     def menu(*, **options, &)
       menu_classes = component_classes("dropdown-content", options:)
 
-      if modifiers.include?(:tap_to_close)
+      if tap_to_close?
         render Menu.new(*, class: menu_classes, **options, &)
       else
         render Menu.new(*, tabindex: 0, class: menu_classes, **options, &)
       end
+    end
+
+    def tap_to_close?
+      modifiers.include?(:tap_to_close)
     end
 
     private
