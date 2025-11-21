@@ -31,27 +31,29 @@ module DaisyUI
     end
 
     register_modifiers(
-      # "sm:tabs-boxed"
-      # "@sm:tabs-boxed"
-      # "md:tabs-boxed"
-      # "@md:tabs-boxed"
-      # "lg:tabs-boxed"
-      # "@lg:tabs-boxed"
-      boxed: "tabs-boxed",
-      # "sm:tabs-bordered"
-      # "@sm:tabs-bordered"
-      # "md:tabs-bordered"
-      # "@md:tabs-bordered"
-      # "lg:tabs-bordered"
-      # "@lg:tabs-bordered"
-      bordered: "tabs-bordered",
-      # "sm:tabs-lifted"
-      # "@sm:tabs-lifted"
-      # "md:tabs-lifted"
-      # "@md:tabs-lifted"
-      # "lg:tabs-lifted"
-      # "@lg:tabs-lifted"
-      lifted: "tabs-lifted",
+      # Style modifiers
+      # "sm:tabs-box"
+      # "@sm:tabs-box"
+      # "md:tabs-box"
+      # "@md:tabs-box"
+      # "lg:tabs-box"
+      # "@lg:tabs-box"
+      box: "tabs-box",
+      # "sm:tabs-border"
+      # "@sm:tabs-border"
+      # "md:tabs-border"
+      # "@md:tabs-border"
+      # "lg:tabs-border"
+      # "@lg:tabs-border"
+      border: "tabs-border",
+      # "sm:tabs-lift"
+      # "@sm:tabs-lift"
+      # "md:tabs-lift"
+      # "@md:tabs-lift"
+      # "lg:tabs-lift"
+      # "@lg:tabs-lift"
+      lift: "tabs-lift",
+      # Size modifiers
       # "sm:tabs-xs"
       # "@sm:tabs-xs"
       # "md:tabs-xs"
@@ -79,7 +81,22 @@ module DaisyUI
       # "@md:tabs-lg"
       # "lg:tabs-lg"
       # "@lg:tabs-lg"
-      lg: "tabs-lg"
-    )
+      lg: "tabs-lg",
+      # Placement modifiers
+      # "sm:tabs-top"
+      # "@sm:tabs-top"
+      # "md:tabs-top"
+      # "@md:tabs-top"
+      # "lg:tabs-top"
+      # "@lg:tabs-top"
+      top: "tabs-top",
+      # "sm:tabs-bottom"
+      # "@sm:tabs-bottom"
+      # "md:tabs-bottom"
+      # "@md:tabs-bottom"
+      # "lg:tabs-bottom"
+      # "@lg:tabs-bottom"
+      bottom: "tabs-bottom"
+    ).freeze
   end
 end

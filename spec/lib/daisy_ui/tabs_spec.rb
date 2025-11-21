@@ -7,9 +7,9 @@ describe DaisyUI::Tabs do
 
   describe "conditions" do
     {
-      boxed: "tabs-boxed",
-      bordered: "tabs-bordered",
-      lifted: "tabs-lifted",
+      box: "tabs-box",
+      border: "tabs-border",
+      lift: "tabs-lift",
       xs: "tabs-xs",
       sm: "tabs-sm",
       md: "tabs-md",
@@ -53,12 +53,12 @@ describe DaisyUI::Tabs do
 
     describe "data" do
       subject(:output) do
-        render described_class.new(:boxed, data: { foo: "bar" })
+        render described_class.new(:box, data: { foo: "bar" })
       end
 
       it "renders it correctly" do
         expected_html = html <<~HTML
-          <div role="tablist" class="tabs tabs-boxed" data-foo="bar"></div>
+          <div role="tablist" class="tabs tabs-box" data-foo="bar"></div>
         HTML
 
         expect(output).to eq(expected_html)
@@ -67,7 +67,7 @@ describe DaisyUI::Tabs do
 
     describe "prefix" do
       subject(:output) do
-        render described_class.new(:boxed)
+        render described_class.new(:box)
       end
 
       around do |example|
@@ -86,7 +86,7 @@ describe DaisyUI::Tabs do
 
       it "renders it correctly" do
         expected_html = html <<~HTML
-          <div role="tablist" class="foo-tabs foo-tabs-boxed"></div>
+          <div role="tablist" class="foo-tabs foo-tabs-box"></div>
         HTML
 
         expect(output).to eq(expected_html)
@@ -101,11 +101,11 @@ describe DaisyUI::Tabs do
     end
 
     context "when given multiple conditions" do
-      subject(:output) { render described_class.new(:boxed, :bordered) }
+      subject(:output) { render described_class.new(:box, :border) }
 
       it "renders them separately" do
         expected_html = html <<~HTML
-          <div role="tablist" class="tabs tabs-boxed tabs-bordered"></div>
+          <div role="tablist" class="tabs tabs-box tabs-border"></div>
         HTML
 
         expect(output).to eq(expected_html)
@@ -117,12 +117,12 @@ describe DaisyUI::Tabs do
     %i[sm md lg xl @sm @md @lg @xl].each do |viewport|
       context "when given an :#{viewport} responsive option as a single argument" do
         subject(:output) do
-          render described_class.new(:boxed, responsive: { viewport => :bordered })
+          render described_class.new(:box, responsive: { viewport => :border })
         end
 
         it "renders it separately with a responsive prefix" do
           expected_html = html <<~HTML
-            <div role="tablist" class="tabs tabs-boxed #{viewport}:tabs-bordered">
+            <div role="tablist" class="tabs tabs-box #{viewport}:tabs-border">
             </div>
           HTML
 
@@ -132,16 +132,16 @@ describe DaisyUI::Tabs do
 
       context "when given multiple responsive options as an array" do
         subject(:output) do
-          render described_class.new(:boxed, responsive: { viewport => %i[boxed bordered] })
+          render described_class.new(:box, responsive: { viewport => %i[box border] })
         end
 
         it "renders it separately with a responsive prefix" do
           expected_html = html <<~HTML
             <div role="tablist" class="
               tabs
-              tabs-boxed
-              #{viewport}:tabs-boxed
-              #{viewport}:tabs-bordered">
+              tabs-box
+              #{viewport}:tabs-box
+              #{viewport}:tabs-border">
             </div>
           HTML
 
@@ -151,7 +151,7 @@ describe DaisyUI::Tabs do
 
       context "when it's prefixed" do
         subject(:output) do
-          render described_class.new(:boxed, responsive: { viewport => %i[boxed bordered] })
+          render described_class.new(:box, responsive: { viewport => %i[box border] })
         end
 
         around do |example|
@@ -172,9 +172,9 @@ describe DaisyUI::Tabs do
           expected_html = html <<~HTML
             <div role="tablist" class="
               foo-tabs
-              foo-tabs-boxed
-              #{viewport}:foo-tabs-boxed
-              #{viewport}:foo-tabs-bordered">
+              foo-tabs-box
+              #{viewport}:foo-tabs-box
+              #{viewport}:foo-tabs-border">
             </div>
           HTML
 
@@ -186,12 +186,12 @@ describe DaisyUI::Tabs do
 
   describe "rendering via Kit" do
     subject(:output) do
-      Tabs(:boxed)
+      Tabs(:box)
     end
 
     it "renders it correctly" do
       expected_html = html <<~HTML
-        <div role="tablist" class="tabs tabs-boxed"></div>
+        <div role="tablist" class="tabs tabs-box"></div>
       HTML
 
       expect(output).to eq(expected_html)
@@ -276,7 +276,7 @@ describe DaisyUI::Tabs do
     let(:component) do
       Class.new(Phlex::HTML) do
         def view_template(&)
-          render DaisyUI::Tabs.new :lifted, boxed: false, id: "my_tabs_2" do |tabs|
+          render DaisyUI::Tabs.new :lift, box: false, id: "my_tabs_2" do |tabs|
             tabs.tab "Tab 1", :active, :closed, data: { my: :tabs } do |tab|
               tab.content class: "bg-base-100 border-base-300 rounded-box p-6" do
                 "Tab content 1"
@@ -295,7 +295,7 @@ describe DaisyUI::Tabs do
 
     it "is expected to match the formatted HTML" do
       expected_html = html <<~HTML
-        <div role="tablist" class="tabs tabs-lifted">
+        <div role="tablist" class="tabs tabs-lift">
           <input#{' '}
             type="radio"#{' '}
             name="my_tabs_2"#{' '}
