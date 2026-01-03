@@ -1,0 +1,36 @@
+{
+  "name": "@mhenrixon/daisyui-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for DaisyUI Ruby/Phlex components",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "daisyui-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "daisyui",
+    "phlex",
+    "ruby",
+    "components"
+  ],
+  "author": "Mikael Henriksson",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  },
+  "files": [
+    "dist",
+    "snippets"
+  ]
+}
