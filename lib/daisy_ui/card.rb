@@ -32,27 +32,20 @@ module DaisyUI
       # "lg:image-full"
       # "@lg:image-full"
       image_full: "image-full",
-      # "sm:card-bordered"
-      # "@sm:card-bordered"
-      # "md:card-bordered"
-      # "@md:card-bordered"
-      # "lg:card-bordered"
-      # "@lg:card-bordered"
-      bordered: "card-bordered",
-      # "sm:card-normal"
-      # "@sm:card-normal"
-      # "md:card-normal"
-      # "@md:card-normal"
-      # "lg:card-normal"
-      # "@lg:card-normal"
-      normal: "card-normal",
-      # "sm:card-compact"
-      # "@sm:card-compact"
-      # "md:card-compact"
-      # "@md:card-compact"
-      # "lg:card-compact"
-      # "@lg:card-compact"
-      compact: "card-compact",
+      # "sm:card-border"
+      # "@sm:card-border"
+      # "md:card-border"
+      # "@md:card-border"
+      # "lg:card-border"
+      # "@lg:card-border"
+      border: "card-border",
+      # "sm:card-dash"
+      # "@sm:card-dash"
+      # "md:card-dash"
+      # "@md:card-dash"
+      # "lg:card-dash"
+      # "@lg:card-dash"
+      dash: "card-dash",
       # "sm:card-side"
       # "@sm:card-side"
       # "md:card-side"
@@ -60,13 +53,42 @@ module DaisyUI
       # "lg:card-side"
       # "@lg:card-side"
       side: "card-side",
-      # "sm:glass"
-      # "@sm:glass"
-      # "md:glass"
-      # "@md:glass"
-      # "lg:glass"
-      # "@lg:glass"
-      glass: "glass",
+      # Sizes
+      # "sm:card-xs"
+      # "@sm:card-xs"
+      # "md:card-xs"
+      # "@md:card-xs"
+      # "lg:card-xs"
+      # "@lg:card-xs"
+      xs: "card-xs",
+      # "sm:card-sm"
+      # "@sm:card-sm"
+      # "md:card-sm"
+      # "@md:card-sm"
+      # "lg:card-sm"
+      # "@lg:card-sm"
+      sm: "card-sm",
+      # "sm:card-md"
+      # "@sm:card-md"
+      # "md:card-md"
+      # "@md:card-md"
+      # "lg:card-md"
+      # "@lg:card-md"
+      md: "card-md",
+      # "sm:card-lg"
+      # "@sm:card-lg"
+      # "md:card-lg"
+      # "@md:card-lg"
+      # "lg:card-lg"
+      # "@lg:card-lg"
+      lg: "card-lg",
+      # "sm:card-xl"
+      # "@sm:card-xl"
+      # "md:card-xl"
+      # "@md:card-xl"
+      # "lg:card-xl"
+      # "@lg:card-xl"
+      xl: "card-xl",
       **COLOR_MODIFIERS
     )
   end

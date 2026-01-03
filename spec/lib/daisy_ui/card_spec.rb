@@ -17,11 +17,16 @@ describe DaisyUI::Card do
     {
       # Modifiers
       image_full: "image-full",
-      bordered: "card-bordered",
-      normal: "card-normal",
-      compact: "card-compact",
+      border: "card-border",
+      dash: "card-dash",
       side: "card-side",
-      glass: "glass",
+      # Sizes
+      xs: "card-xs",
+      sm: "card-sm",
+      md: "card-md",
+      lg: "card-lg",
+      xl: "card-xl",
+      # Colors
       primary: "bg-primary text-primary-content",
       secondary: "bg-secondary text-secondary-content",
       accent: "bg-accent text-accent-content",
@@ -55,11 +60,11 @@ describe DaisyUI::Card do
     end
 
     context "when given multiple conditions" do
-      subject(:output) { render described_class.new(:compact, :bordered) }
+      subject(:output) { render described_class.new(:border, :dash) }
 
       it "renders them separately" do
         expected_html = html <<~HTML
-          <section class="card card-compact card-bordered"></section>
+          <section class="card card-border card-dash"></section>
         HTML
 
         expect(output).to eq(expected_html)
@@ -69,12 +74,12 @@ describe DaisyUI::Card do
 
   describe "data" do
     subject(:output) do
-      render described_class.new(:compact, data: { foo: "bar" })
+      render described_class.new(:border, data: { foo: "bar" })
     end
 
     it "renders it correctly" do
       expected_html = html <<~HTML
-        <section class="card card-compact" data-foo="bar"></section>
+        <section class="card card-border" data-foo="bar"></section>
       HTML
 
       expect(output).to eq(expected_html)
@@ -83,7 +88,7 @@ describe DaisyUI::Card do
 
   describe "prefix" do
     subject(:output) do
-      render described_class.new(:compact)
+      render described_class.new(:border)
     end
 
     around do |example|
@@ -102,7 +107,7 @@ describe DaisyUI::Card do
 
     it "renders it correctly" do
       expected_html = html <<~HTML
-        <section class="foo-card foo-card-compact"></section>
+        <section class="foo-card foo-card-border"></section>
       HTML
 
       expect(output).to eq(expected_html)
@@ -188,14 +193,14 @@ describe DaisyUI::Card do
     %i[sm md lg xl @sm @md @lg @xl].each do |viewport|
       context "when given an :#{viewport} responsive option as a single argument" do
         subject(:output) do
-          render described_class.new(:compact, responsive: { viewport => :primary })
+          render described_class.new(:border, responsive: { viewport => :primary })
         end
 
         it "renders it separately with a responsive prefix" do
           expected_html = html <<~HTML
             <section class="
               card#{' '}
-              card-compact#{' '}
+              card-border#{' '}
               #{viewport}:bg-primary#{' '}
               #{viewport}:text-primary-content">
             </section>
@@ -207,15 +212,15 @@ describe DaisyUI::Card do
 
       context "when given multiple responsive options as an array" do
         subject(:output) do
-          render described_class.new(:compact, responsive: { viewport => %i[normal primary] })
+          render described_class.new(:border, responsive: { viewport => %i[dash primary] })
         end
 
         it "renders it separately with a responsive prefix" do
           expected_html = html <<~HTML
             <section class="
               card#{' '}
-              card-compact#{' '}
-              #{viewport}:card-normal#{' '}
+              card-border#{' '}
+              #{viewport}:card-dash#{' '}
               #{viewport}:bg-primary
               #{viewport}:text-primary-content">
             </section>
@@ -227,7 +232,7 @@ describe DaisyUI::Card do
 
       context "when it's prefixed" do
         subject(:output) do
-          render described_class.new(:compact, responsive: { viewport => %i[normal primary] })
+          render described_class.new(:border, responsive: { viewport => %i[dash primary] })
         end
 
         around do |example|
@@ -248,8 +253,8 @@ describe DaisyUI::Card do
           expected_html = html <<~HTML
             <section class="
               foo-card#{' '}
-              foo-card-compact
-              #{viewport}:foo-card-normal
+              foo-card-border
+              #{viewport}:foo-card-dash
               #{viewport}:foo-bg-primary
               #{viewport}:foo-text-primary-content">
             </section>
@@ -308,12 +313,12 @@ describe DaisyUI::Card do
 
   describe "rendering via Kit" do
     subject(:output) do
-      Card(:compact)
+      Card(:border)
     end
 
     it "renders it correctly" do
       expected_html = html <<~HTML
-        <section class="card card-compact"></section>
+        <section class="card card-border"></section>
       HTML
 
       expect(output).to eq(expected_html)
@@ -340,7 +345,7 @@ describe DaisyUI::Card do
     let(:component) do
       Class.new(Phlex::HTML) do
         def view_template(&)
-          render DaisyUI::Card.new(:compact) do |card|
+          render DaisyUI::Card.new(:border) do |card|
             card.body class: "my-body", data: { my: "bodies" }, style: "color: red;" do
               card.figure class: "my-figure", data: { my: "figures" } do
                 card.img src: "image.jpg"
@@ -361,7 +366,7 @@ describe DaisyUI::Card do
 
     it "is expected to match the formatted HTML" do
       expected_html = html <<~HTML
-        <section class="card card-compact">
+        <section class="card card-border">
           <div class="card-body my-body" data-my="bodies" style="color: red;">
             <figure class="my-figure" data-my="figures">
               <img src="image.jpg">
