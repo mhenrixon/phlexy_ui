@@ -65,6 +65,20 @@ module DaisyUI
       # "lg:btn-outline"
       # "@lg:btn-outline"
       outline: "btn-outline",
+      # "sm:btn-dash"
+      # "@sm:btn-dash"
+      # "md:btn-dash"
+      # "@md:btn-dash"
+      # "lg:btn-dash"
+      # "@lg:btn-dash"
+      dash: "btn-dash",
+      # "sm:btn-soft"
+      # "@sm:btn-soft"
+      # "md:btn-soft"
+      # "@md:btn-soft"
+      # "lg:btn-soft"
+      # "@lg:btn-soft"
+      soft: "btn-soft",
       # "sm:btn-active"
       # "@sm:btn-active"
       # "md:btn-active"
@@ -107,6 +121,13 @@ module DaisyUI
       # "lg:btn-xs"
       # "@lg:btn-xs"
       xs: "btn-xs",
+      # "sm:btn-xl"
+      # "@sm:btn-xl"
+      # "md:btn-xl"
+      # "@md:btn-xl"
+      # "lg:btn-xl"
+      # "@lg:btn-xl"
+      xl: "btn-xl",
       # "sm:btn-wide"
       # "@sm:btn-wide"
       # "md:btn-wide"
