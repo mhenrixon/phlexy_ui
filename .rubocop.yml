@@ -55,7 +55,7 @@ Layout/LineLength:
   AllowHeredoc: true
   AllowURI: true
   Enabled: false
-  IgnoreCopDirectives: true
+  AllowCopDirectives: true
   Max: 125
   AllowedPatterns:
     - '\A\s*#\s*'
