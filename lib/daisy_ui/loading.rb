@@ -82,7 +82,18 @@ module DaisyUI
       # "@md:loading-lg"
       # "lg:loading-lg"
       # "@lg:loading-lg"
+      # "xl:loading-lg"
+      # "@xl:loading-lg"
       lg: "loading-lg",
+      # "sm:loading-xl"
+      # "@sm:loading-xl"
+      # "md:loading-xl"
+      # "@md:loading-xl"
+      # "lg:loading-xl"
+      # "@lg:loading-xl"
+      # "xl:loading-xl"
+      # "@xl:loading-xl"
+      xl: "loading-xl",
       # "sm:text-primary"
       # "@sm:text-primary"
       # "md:text-primary"
