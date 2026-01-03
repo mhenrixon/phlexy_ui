@@ -1,76 +1,55 @@
 source "https://rubygems.org"
+
 plugin "bundler-symlink"
 
-# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+# Rails core
 gem "rails", ">= 8.1.0"
-# The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
-# Use sqlite3 as the database for Active Record
 gem "sqlite3"
-# Use the Puma web server [https://github.com/puma/puma]
 gem "puma"
-# Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder"
-# Use Redis adapter to run Action Cable in production
-# gem "redis", ">= 4.0.1"
-
-# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
-# gem "kredis"
-
-# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem "bootsnap", require: false
 gem "tzinfo-data", platforms: %i[windows jruby]
 
-# Reduces boot times through caching; required in config/boot.rb
-gem "bootsnap", require: false
-
-# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
-
-group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[mri windows], require: "debug/prelude"
-
-  # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
-  gem "brakeman", require: false
-end
-
-group :development do
-  # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem "web-console"
-end
-
-group :test do
-  # Use system testing with Playwright
-  gem "capybara"
-  gem "capybara-playwright-driver"
-  gem "playwright-ruby-client"
-end
-gem "ruby-vips"
+# Frontend
 gem "importmap-rails"
-gem "name_of_person"
-gem "litestack", ">= 0.4.5", github: "oldmoe/litestack"
-gem "phlex-rails"
-gem "friendly_id"
-gem "factory_bot_rails"
-gem "faker"
 gem "stimulus-rails"
 gem "turbo-rails"
+
+# Views
+gem "phlex-rails"
 gem "daisyui", path: "..", require: "daisy_ui"
 gem "rouge"
 gem "method_source"
 
+# Database & Performance
+gem "litestack", ">= 0.4.5", github: "oldmoe/litestack"
+gem "friendly_id"
+
+# Utilities
+gem "jbuilder"
+gem "name_of_person"
+gem "ruby-vips"
+
 group :development, :test do
+  gem "debug", platforms: %i[mri windows], require: "debug/prelude"
+  gem "brakeman", require: false
   gem "dotenv"
   gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem "faker"
   gem "prosopite"
   gem "pg_query"
 end
 
 group :development do
+  gem "web-console"
   gem "standard"
   gem "annotate"
   gem "dockerfile-rails"
+end
+
+group :test do
+  gem "capybara"
+  gem "capybara-playwright-driver"
+  gem "playwright-ruby-client"
 end
