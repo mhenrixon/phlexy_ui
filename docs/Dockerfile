@@ -1,10 +1,8 @@
 # syntax = docker/dockerfile:1
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
-ARG RUBY_VERSION=3.3.1
-FROM ruby:$RUBY_VERSION-slim as base
-
-LABEL fly_launch_runtime="rails"
+ARG RUBY_VERSION=3.4.8
+FROM ruby:$RUBY_VERSION-slim AS base
 
 # Rails app lives here
 WORKDIR /rails
@@ -17,21 +15,19 @@ ENV BUNDLE_DEPLOYMENT="1" \
     RAILS_ENV="production"
 
 # Update gems and bundler
-# Temporarily disabled to fix bundler path issues
-# RUN gem update --system --no-document && \
-#     gem install -N bundler
-RUN gem install bundler:2.5.14 --no-document
+RUN gem update --system --no-document && \
+    gem install -N bundler
 
 
 # Throw-away build stage to reduce size of final image
-FROM base as build
+FROM base AS build
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential curl git libvips pkg-config unzip
 
 # Install Bun
-ARG BUN_VERSION=1.1.27
+ARG BUN_VERSION=1.3.2
 ENV BUN_INSTALL=/usr/local/bun
 ENV PATH=/usr/local/bun/bin:$PATH
 RUN curl -fsSL https://bun.sh/install | bash -s -- "bun-v${BUN_VERSION}"
@@ -43,7 +39,7 @@ RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git
 
 # Install node modules
-COPY --link package.json bun.lockb ./
+COPY --link package.json bun.lock ./
 RUN bun install --frozen-lockfile
 
 # Copy application code
