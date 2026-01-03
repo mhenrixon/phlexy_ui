@@ -32,6 +32,13 @@ module DaisyUI
       # "lg:tooltip-top"
       # "@lg:tooltip-top"
       top: "tooltip-top",
+      # "sm:tooltip-neutral"
+      # "@sm:tooltip-neutral"
+      # "md:tooltip-neutral"
+      # "@md:tooltip-neutral"
+      # "lg:tooltip-neutral"
+      # "@lg:tooltip-neutral"
+      neutral: "tooltip-neutral",
       # "sm:tooltip-bottom"
       # "@sm:tooltip-bottom"
       # "md:tooltip-bottom"
