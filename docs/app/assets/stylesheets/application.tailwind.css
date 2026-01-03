@@ -32,6 +32,18 @@
   display: contents;
 }
 
+/* Override @tailwindcss/forms checkbox styles for DaisyUI components */
+.toggle,
+.checkbox,
+.radio {
+  background-image: none !important;
+}
+.toggle:checked,
+.checkbox:checked,
+.radio:checked {
+  background-image: none !important;
+}
+
 /* Responsive drawer-open - outside layers for highest specificity */
 @media (min-width: 1024px) {
   .lg\:drawer-open {

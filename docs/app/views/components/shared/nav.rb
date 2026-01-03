@@ -69,7 +69,7 @@ module Shared
         :ghost,
         :square,
         as: :a,
-        href: "https://github.com/phlexyUI/phlexy_ui",
+        href: "https://github.com/mhenrixon/daisyui",
         target: "_blank",
         class: "self-baseline"
       ) do

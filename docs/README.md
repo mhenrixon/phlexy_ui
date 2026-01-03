@@ -1,9 +1,9 @@
 <picture>
   <source srcset="https://github.com/user-attachments/assets/2c4d7fdb-abe7-4f71-a6d0-ef4d41b5625a" media="(prefers-color-scheme: dark)">
-  <img src="https://github.com/user-attachments/assets/9afa9755-4aab-412a-9dc9-5eb2f76c12d6" width="350" alt="PhlexUI logo"><br>
+  <img src="https://github.com/user-attachments/assets/9afa9755-4aab-412a-9dc9-5eb2f76c12d6" width="350" alt="DaisyUI logo"><br>
 </picture>
 
-This is the repo [for the docs](https://phlexyui.com/) of DaisyUI, a Ruby UI component library for DaisyUI using Phlex ✨
+This is the documentation site for DaisyUI, a Ruby UI component library for DaisyUI using Phlex.
 
 # 🔧 Development
 
@@ -11,15 +11,15 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 # 💻 Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/DaisyUI/phlexy_ui_docs. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/phlexy_ui/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/mhenrixon/daisyui. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/mhenrixon/daisyui/blob/main/CODE_OF_CONDUCT.md).
 
 ## How to
 
-1. Visit [the docs](https://phlexyui.com/) to see which components are still not implemented or not yet added to the docs.
+1. Visit [the docs](https://daisyui.phlex.fun/) to see which components are still not implemented or not yet added to the docs.
 
-2. If not implemented yet, implement it on the [DaisyUI repo](https://github.com/DaisyUI/phlexy_ui).
+2. If not implemented yet, implement it on the [DaisyUI repo](https://github.com/mhenrixon/daisyui).
 
-3. Add it to the docs by adding it to this repo. See [using the generators](https://github.com/DaisyUI/phlexy_ui_docs?tab=readme-ov-file#using-the-generators) section to see how to do so.
+3. Add it to the docs by adding it to this repo. See [using the generators](#using-the-generators) section to see how to do so.
 
 4. Celebrate 🎉
 
@@ -70,4 +70,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 # ☝️ Code of Conduct
 
-Everyone interacting in the DaisyUI project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/phlexy_ui/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the DaisyUI project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/mhenrixon/daisyui/blob/main/CODE_OF_CONDUCT.md).

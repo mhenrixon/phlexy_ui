@@ -60,7 +60,7 @@ module Docs
               "Contributions are welcome! If you want to contribute to DaisyUI, please visit the "
             end
 
-            Link :underlined, href: "https://github.com/phlexyUI/phlexy_ui", target: "_blank" do
+            Link :underlined, href: "https://github.com/mhenrixon/daisyui", target: "_blank" do
               "GitHub repository"
             end
 

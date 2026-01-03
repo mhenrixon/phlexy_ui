@@ -178,7 +178,7 @@ module Docs
           end
 
           Code(:shell, source: <<~RB, mockup: true) do
-            bundle add phlexy_ui
+            bundle add daisyui
           RB
           end
 
@@ -265,13 +265,13 @@ module Docs
 
           Code(:javascript, source: <<~JS, mockup: true) do
             const execSync = require("child_process").execSync;
-            const outputDaisyUI = execSync("bundle show phlexy_ui", { encoding: "utf-8" });
-            const phlexyUIPath = outputDaisyUI.trim() + "/**/*.rb";
-            
+            const outputDaisyUI = execSync("bundle show daisyui", { encoding: "utf-8" });
+            const daisyUIPath = outputDaisyUI.trim() + "/**/*.rb";
+
             module.exports = {
               content: [
                 // ... other paths
-                phlexyUIPath,
+                daisyUIPath,
               ],
             };
           JS

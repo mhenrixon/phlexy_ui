@@ -119,6 +119,39 @@ module.exports = {
 };
 ```
 
+# Compatibility Notes
+
+## @tailwindcss/forms plugin
+
+If you're using the `@tailwindcss/forms` plugin alongside DaisyUI, you may encounter styling conflicts with form components like Toggle, Checkbox, and Radio. The forms plugin adds default checkbox/radio styling that can interfere with DaisyUI's custom styling.
+
+**Solution:** Add the following CSS to your stylesheet to override the forms plugin styling for DaisyUI components:
+
+```css
+/* Override @tailwindcss/forms checkbox styles for DaisyUI components */
+.toggle,
+.checkbox,
+.radio {
+  background-image: none !important;
+}
+.toggle:checked,
+.checkbox:checked,
+.radio:checked {
+  background-image: none !important;
+}
+```
+
+Alternatively, you can configure `@tailwindcss/forms` to use the `class` strategy instead of `base`, which only applies styles when you explicitly add form classes:
+
+```js
+// tailwind.config.js
+plugins: [
+  require('@tailwindcss/forms')({
+    strategy: 'class', // only apply form styles to elements with form-* classes
+  }),
+],
+```
+
 # Usage
 
 Refer to [the docs](https://daisyui.phlex.fun) to see how to use components. Here's an example:

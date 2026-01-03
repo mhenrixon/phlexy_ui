@@ -53,7 +53,7 @@ class Component
   end
 
   def github_url
-    "https://github.com/DaisyUI/phlexy_ui/blob/main/lib/phlexy_ui/#{name.underscore}.rb"
+    "https://github.com/mhenrixon/daisyui/blob/main/lib/daisy_ui/#{name.underscore}.rb"
   end
 
   private

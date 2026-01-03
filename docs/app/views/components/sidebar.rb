@@ -13,7 +13,7 @@ class Sidebar < ApplicationView
           class: "text-lg md:text-2xl font-bold mt-2",
           data: {turbo_frame: :content, turbo_action: :advance}
         ) do
-          image_tag "phlexy_ui_logo.png", class: "w-12 h-12"
+          image_tag "daisyui-mark.svg", class: "w-12 h-12"
           plain "DaisyUI"
         end
 

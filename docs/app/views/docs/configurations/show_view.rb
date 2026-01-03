@@ -29,7 +29,7 @@ module Docs
           end
 
           Code(:ruby, source: <<~RB, mockup: true) do
-            # config/initializers/phlexy_ui.rb
+            # config/initializers/daisyui.rb
             DaisyUI.configure do |config|
               config.prefix = "foo-"
             end
@@ -72,7 +72,7 @@ module Docs
           end
 
           Code(:ruby, source: <<~RB, mockup: true) do
-            # config/initializers/phlexy_ui.rb
+            # config/initializers/daisyui.rb
             DaisyUI.configure do |config|
               config.modifiers.add(
                 :my_modifier,
@@ -111,7 +111,7 @@ module Docs
           end
 
           Code(:ruby, source: <<~RB, mockup: true) do
-            # config/initializers/phlexy_ui.rb
+            # config/initializers/daisyui.rb
             DaisyUI.configure do |config|
               config.modifiers.add(
                 :my_global_modifier,

@@ -52,7 +52,7 @@ module Shared
       style do
         css.html_safe + <<~CSS
           .highlight {
-            background-color: oklch(var(--n));
+            background-color: #272822;
             overflow-x: auto;
             font-size: 0.75rem;
             line-height: 1.4;
@@ -67,11 +67,11 @@ module Shared
           .highlight .rouge-gutter {
             width: 2.5em;
             padding: 0 0.5em 0 0.5em;
-            color: oklch(var(--nc) / 0.4);
+            color: rgba(248, 248, 242, 0.4);
             text-align: right;
             vertical-align: top;
             user-select: none;
-            border-right: 1px solid oklch(var(--nc) / 0.1);
+            border-right: 1px solid rgba(248, 248, 242, 0.1);
           }
 
           .highlight .rouge-gutter pre {
