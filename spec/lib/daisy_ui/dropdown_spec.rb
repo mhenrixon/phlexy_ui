@@ -37,13 +37,17 @@ describe DaisyUI::Dropdown do
     end
   end
 
-  describe "conditions" do
+  describe "modifiers" do
     {
+      # Placement
+      start: "dropdown-start",
+      center: "dropdown-center",
       end: "dropdown-end",
       top: "dropdown-top",
       bottom: "dropdown-bottom",
       left: "dropdown-left",
       right: "dropdown-right",
+      # Behavior
       hover: "dropdown-hover",
       open: "dropdown-open"
     }.each do |condition, css|
