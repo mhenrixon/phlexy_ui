@@ -1,11 +1,11 @@
 <picture>
   <source srcset="https://github.com/user-attachments/assets/2c4d7fdb-abe7-4f71-a6d0-ef4d41b5625a" media="(prefers-color-scheme: dark)">
-  <img src="https://github.com/user-attachments/assets/9afa9755-4aab-412a-9dc9-5eb2f76c12d6" width="350" alt="PhlexUI logo"><br>
+  <img src="https://github.com/user-attachments/assets/9afa9755-4aab-412a-9dc9-5eb2f76c12d6" width="350" alt="DaisyUI logo"><br>
 </picture>
 
-A Ruby UI component library for DaisyUI using Phlex ✨
+A Ruby UI component library for DaisyUI using Phlex
 
-# ⚙️ Installation
+# Installation
 
 ## 1. Install CSS dependencies
 
@@ -37,31 +37,31 @@ Install tailwindcss-rails gem for Rails to automatically include your TailwindCS
 
 For this, you'll need to install the gem by following the instructions in the [tailwindcss-rails repo](https://github.com/rails/tailwindcss-rails).
 
-Finally, you'll need to set the `TAILWINDCSS_INSTALL_DIR` environment variable in your Rails app pointing to the directory where you plaed the binary from the tailwind-cli-extra repo mentioned above. e.g. `TAILWINDCSS_INSTALL_DIR=bin`
+Finally, you'll need to set the `TAILWINDCSS_INSTALL_DIR` environment variable in your Rails app pointing to the directory where you placed the binary from the tailwind-cli-extra repo mentioned above. e.g. `TAILWINDCSS_INSTALL_DIR=bin`
 
-### 2. Install Ruby dependencies
+## 2. Install Ruby dependencies
 
-#### Install Phlex
+### Install Phlex
 
 Install Phlex by following the instructions in the [Phlex documentation](https://www.phlex.fun/#rails-introduction).
 
-#### Install PhlexyUI
+### Install DaisyUI gem
 
-1. Add the PhlexyUI gem to your Gemfile:
+1. Add the DaisyUI gem to your Gemfile:
 
 ```
-bundle add phlexy_ui
+bundle add daisyui
 ```
 
-2. (Optional) Include the `PhlexyUI` module in `ApplicationComponent`:
+2. (Optional) Include the `DaisyUI` module in `ApplicationComponent`:
 
 ```rb
 class ApplicationComponent < Phlex::HTML
-  include PhlexyUI
+  include DaisyUI
 end
 ```
 
-This will allow you to use PhlexyUI components using the short-form syntax. For example:
+This will allow you to use DaisyUI components using the short-form syntax. For example:
 
 ```rb
 class SomeView < ApplicationView
@@ -73,35 +73,35 @@ class SomeView < ApplicationView
 end
 ```
 
-If you don't include PhlexyUI, you can still use the namespaced syntax:
+If you don't include DaisyUI, you can still use the namespaced syntax:
 
 ```rb
 class SomeView < ApplicationView
   def view_template
-    PhlexyUI::Button :primary do
+    render DaisyUI::Button.new(:primary) do
       "Hello, world!"
     end
   end
 end
 ```
 
-Consider not including PhlexyUI in ApplicationComponent if:
+Consider not including DaisyUI in ApplicationComponent if:
 
-- You have your own component library with the same component names as PhlexyUI.
+- You have your own component library with the same component names as DaisyUI.
 - You're including your own components module in `ApplicationComponent`.
 
-In this scenario, including both PhlexyUI and your own component library in `ApplicationComponent` will lead to naming conflicts.
+In this scenario, including both DaisyUI and your own component library in `ApplicationComponent` will lead to naming conflicts.
 
-3. Update your `tailwind.config.js` file to include PhlexyUI styles:
+3. Update your `tailwind.config.js` file to include DaisyUI component styles:
 
 ```js
 const execSync = require("child_process").execSync;
-const outputPhlexyUI = execSync("bundle show phlexy_ui", { encoding: "utf-8" });
-const phlexyUIPath = outputPhlexyUI.trim() + "/**/*.rb";
+const outputDaisyUI = execSync("bundle show daisyui", { encoding: "utf-8" });
+const daisyUIPath = outputDaisyUI.trim() + "/**/*.rb";
 module.exports = {
   content: [
     // ... other paths
-    phlexyUIPath,
+    daisyUIPath,
   ],
 };
 ```
@@ -119,9 +119,9 @@ module.exports = {
 };
 ```
 
-# 💡 Usage
+# Usage
 
-Refer to [the docs](https://phlexyui.com) to see how to use components. Here's an example:
+Refer to [the docs](https://daisyui.phlex.fun) to see how to use components. Here's an example:
 
 ```rb
 Card :base_100 do |card|
@@ -146,28 +146,28 @@ end
 
 Which produces:
 
-<img width="544" alt="Screenshot 2024-09-20 at 12 22 52 a m" src="https://github.com/user-attachments/assets/fad06a89-85fa-43cd-8c8f-7ed23b4ad77b">
+<img width="544" alt="Card example" src="https://github.com/user-attachments/assets/fad06a89-85fa-43cd-8c8f-7ed23b4ad77b">
 
-# 🔧 Development
+# Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bundle exec rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-# 💻 Contributing
+# Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/PhlexyUI/phlexy_ui. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/phlexy_ui/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/mhenrixon/daisyui. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/mhenrixon/daisyui/blob/main/CODE_OF_CONDUCT.md).
 
-1. Visit [the docs](https://phlexyui.com/) to see which components are still not implemented or not yet added to the docs.
+1. Visit [the docs](https://daisyui.phlex.fun/) to see which components are still not implemented or not yet added to the docs.
 
 2. Implement it.
 
-3. After your PR is merged, [add it to the docs](https://github.com/PhlexyUI/phlexy_ui_docs).
+3. After your PR is merged, [add it to the docs](https://github.com/mhenrixon/daisyui-docs).
 
-4. Celebrate 🎉
+4. Celebrate!
 
-# 📃 License
+# License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-# ☝️ Code of Conduct
+# Code of Conduct
 
-Everyone interacting in the PhlexyUI project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/phlexy_ui/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the DaisyUI project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/mhenrixon/daisyui/blob/main/CODE_OF_CONDUCT.md).
