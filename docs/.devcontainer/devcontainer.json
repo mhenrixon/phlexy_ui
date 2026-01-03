@@ -1,0 +1,11 @@
+{
+  "customizations": {
+    "codespaces": {
+      "repositories": {
+        "mhenrixon/daisyui": {
+          "permissions": "write-all"
+        }
+      }
+    }
+  }
+}

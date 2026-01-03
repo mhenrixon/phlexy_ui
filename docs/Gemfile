@@ -1,0 +1,55 @@
+source "https://rubygems.org"
+
+plugin "bundler-symlink"
+
+# Rails core
+gem "rails", ">= 8.1.0"
+gem "propshaft"
+gem "sqlite3"
+gem "puma"
+gem "bootsnap", require: false
+gem "tzinfo-data", platforms: %i[windows jruby]
+
+# Frontend
+gem "importmap-rails"
+gem "stimulus-rails"
+gem "turbo-rails"
+
+# Views
+gem "phlex-rails"
+gem "daisyui", path: "..", require: "daisy_ui"
+gem "rouge"
+gem "method_source"
+
+# Database & Performance
+gem "litestack", ">= 0.4.5", github: "oldmoe/litestack"
+gem "friendly_id"
+
+# Utilities
+gem "jbuilder"
+gem "name_of_person"
+gem "ruby-vips"
+
+group :development, :test do
+  gem "debug", platforms: %i[mri windows], require: "debug/prelude"
+  gem "brakeman", require: false
+  gem "dotenv"
+  gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem "faker"
+  gem "prosopite"
+  gem "pg_query"
+end
+
+group :development do
+  gem "web-console"
+  gem "standard"
+  gem "annotate"
+  gem "dockerfile-rails"
+end
+
+group :test do
+  gem "capybara"
+  gem "capybara-playwright-driver"
+  gem "playwright-ruby-client"
+end
