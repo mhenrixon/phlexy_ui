@@ -56,7 +56,18 @@ module DaisyUI
       # "@md:menu-lg"
       # "lg:menu-lg"
       # "@lg:menu-lg"
+      # "xl:menu-lg"
+      # "@xl:menu-lg"
       lg: "menu-lg",
+      # "sm:menu-xl"
+      # "@sm:menu-xl"
+      # "md:menu-xl"
+      # "@md:menu-xl"
+      # "lg:menu-xl"
+      # "@lg:menu-xl"
+      # "xl:menu-xl"
+      # "@xl:menu-xl"
+      xl: "menu-xl",
       # "sm:menu-vertical"
       # "@sm:menu-vertical"
       # "md:menu-vertical"

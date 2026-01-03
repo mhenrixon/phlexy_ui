@@ -73,7 +73,18 @@ module DaisyUI
       # "@md:table-lg"
       # "lg:table-lg"
       # "@lg:table-lg"
-      lg: "table-lg"
+      # "xl:table-lg"
+      # "@xl:table-lg"
+      lg: "table-lg",
+      # "sm:table-xl"
+      # "@sm:table-xl"
+      # "md:table-xl"
+      # "@md:table-xl"
+      # "lg:table-xl"
+      # "@lg:table-xl"
+      # "xl:table-xl"
+      # "@xl:table-xl"
+      xl: "table-xl"
     )
   end
 end

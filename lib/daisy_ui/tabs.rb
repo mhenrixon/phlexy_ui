@@ -81,7 +81,18 @@ module DaisyUI
       # "@md:tabs-lg"
       # "lg:tabs-lg"
       # "@lg:tabs-lg"
+      # "xl:tabs-lg"
+      # "@xl:tabs-lg"
       lg: "tabs-lg",
+      # "sm:tabs-xl"
+      # "@sm:tabs-xl"
+      # "md:tabs-xl"
+      # "@md:tabs-xl"
+      # "lg:tabs-xl"
+      # "@lg:tabs-xl"
+      # "xl:tabs-xl"
+      # "@xl:tabs-xl"
+      xl: "tabs-xl",
       # Placement modifiers
       # "sm:tabs-top"
       # "@sm:tabs-top"
