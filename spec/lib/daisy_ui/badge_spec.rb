@@ -5,6 +5,51 @@ require "spec_helper"
 describe DaisyUI::Badge do
   subject(:output) { render described_class.new }
 
+  it "is expected to match the formatted HTML" do
+    expected_html = html <<~HTML
+      <span class="badge"></span>
+    HTML
+
+    expect(output).to eq(expected_html)
+  end
+
+  describe "modifiers" do
+    {
+      # Styles
+      outline: "badge-outline",
+      dash: "badge-dash",
+      soft: "badge-soft",
+      ghost: "badge-ghost",
+      # Colors
+      neutral: "badge-neutral",
+      primary: "badge-primary",
+      secondary: "badge-secondary",
+      accent: "badge-accent",
+      info: "badge-info",
+      success: "badge-success",
+      warning: "badge-warning",
+      error: "badge-error",
+      # Sizes
+      xs: "badge-xs",
+      sm: "badge-sm",
+      md: "badge-md",
+      lg: "badge-lg",
+      xl: "badge-xl"
+    }.each do |modifier, css|
+      context "when given :#{modifier} modifier" do
+        subject(:output) { render described_class.new(modifier) }
+
+        it "renders it apart from the main class" do
+          expected_html = html <<~HTML
+            <span class="badge #{css}"></span>
+          HTML
+
+          expect(output).to eq(expected_html)
+        end
+      end
+    end
+  end
+
   describe "responsiveness" do
     %i[sm md lg xl @sm @md @lg @xl].each do |viewport|
       context "when given an :#{viewport} responsive option as a single argument" do
