@@ -38,6 +38,7 @@
 .radio {
   background-image: none !important;
 }
+
 .toggle:checked,
 .checkbox:checked,
 .radio:checked {
@@ -45,14 +46,16 @@
 }
 
 /* Responsive drawer-open - outside layers for highest specificity */
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .lg\:drawer-open {
     display: grid !important;
     grid-auto-columns: max-content auto !important;
   }
+
   .lg\:drawer-open > .drawer-toggle {
     display: none !important;
   }
+
   .lg\:drawer-open > .drawer-toggle ~ .drawer-side,
   .lg\:drawer-open > .drawer-side {
     pointer-events: auto !important;
@@ -64,9 +67,10 @@
     height: 100vh !important;
     height: 100dvh !important;
     overscroll-behavior: auto !important;
-    opacity: 100% !important;
+    opacity: 1 !important;
     overflow-y: auto !important;
   }
+
   .lg\:drawer-open > .drawer-side > .drawer-overlay {
     cursor: default !important;
     background-color: transparent !important;
