@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   class BaseView < ApplicationView
     def initialize(component:)

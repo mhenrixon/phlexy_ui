@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Badges
     class ShowView < BaseView
@@ -14,7 +16,7 @@ module Examples
           EmptyComponent,
           WithStateColorsComponent,
           InATextComponent,
-          InAButtonComponent
+          InAButtonComponent,
         ]
       end
     end

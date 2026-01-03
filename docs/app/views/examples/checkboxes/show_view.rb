@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Checkboxes
     class ShowView < BaseView
@@ -20,7 +22,7 @@ module Examples
           DisabledComponent,
           DisabledAndCheckedComponent,
           IndeterminateComponent,
-          CustomColorsComponent
+          CustomColorsComponent,
         ]
       end
     end

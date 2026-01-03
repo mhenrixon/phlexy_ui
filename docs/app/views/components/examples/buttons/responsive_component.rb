@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Buttons
     class ResponsiveComponent < Base
@@ -6,7 +8,7 @@ module Examples
       end
 
       def example
-        Button :xs, responsive: {sm: :sm, md: :md, lg: :lg} do
+        Button :xs, responsive: { sm: :sm, md: :md, lg: :lg } do
           "Responsive"
         end
       end

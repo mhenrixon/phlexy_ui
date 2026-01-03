@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Tables
     class WithVisualElements < Base
@@ -123,7 +125,7 @@ module Examples
             job: "Community Outreach Specialist",
             color: "Indigo",
             avatar: image_path("person_4.webp")
-          )
+          ),
         ]
       end
     end

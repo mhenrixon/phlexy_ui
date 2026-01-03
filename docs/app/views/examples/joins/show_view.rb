@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Joins
     class ShowView < BaseView
@@ -11,7 +13,7 @@ module Examples
           VerticalComponent,
           ButtonsComponent,
           InputsComponent,
-          RadioButtonsComponent
+          RadioButtonsComponent,
         ]
       end
     end

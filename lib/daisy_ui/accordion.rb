@@ -14,9 +14,7 @@ module DaisyUI
     def view_template(&block)
       public_send(as, class: classes, **attributes) do
         input(type: :radio, name:, checked:)
-        if title_block
-          div(class: build_title_classes, &title_block)
-        end
+        div(class: build_title_classes, &title_block) if title_block
         div(class: "collapse-content", &block) if block
       end
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Steps
     class ShowView < BaseView
@@ -11,7 +13,7 @@ module Examples
           VerticalComponent,
           WithColorsComponent,
           WithDataContentComponent,
-          ResponsiveComponent
+          ResponsiveComponent,
         ]
       end
     end

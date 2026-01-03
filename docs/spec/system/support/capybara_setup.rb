@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "capybara/rails"
 require "capybara/rspec"
 
@@ -49,7 +51,7 @@ RSpec.configure do |config|
   config.after(:each, type: :system) do |example|
     if example.exception
       # Save HTML to file
-      html_path = "tmp/capybara/failures_#{example.id.tr("/", "_").tr(":", "_")}.html"
+      html_path = "tmp/capybara/failures_#{example.id.tr('/', '_').tr(':', '_')}.html"
       File.write(html_path, page.html)
       puts "\n[HTML saved to: #{html_path}]"
       puts "\n[Page URL: #{page.current_url}]"

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Avatars
     class ShowView < BaseView
@@ -15,7 +17,7 @@ module Examples
           GroupWithCounterComponent,
           WithRingComponent,
           WithPresenceIndicatorComponent,
-          PlaceholderComponent
+          PlaceholderComponent,
         ]
       end
     end

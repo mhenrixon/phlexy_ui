@@ -47,14 +47,14 @@ module Shared
           "outline-1",
           "outline-black/5",
           "shadow-2xl",
-          "overscroll-contain"
+          "overscroll-contain",
         ]
 
         dropdown.menu :base_200, class: classes do |menu|
           div class: "grid grid-cols-1 gap-3 p-3" do
             ThemesController::VALID_THEMES.each do |theme|
               menu.item do
-                link_to themes_path(theme:), data: {theme:, turbo_method: :post} do
+                link_to themes_path(theme:), data: { theme:, turbo_method: :post } do
                   theme.capitalize
                 end
               end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Menus
     class CombinedComponent < Base
@@ -23,7 +25,7 @@ module Examples
                 "Parent 1"
               end
 
-              submenu.item do |submenu_item|
+              submenu.item do |_submenu_item|
                 a do
                   "Child 1"
                 end

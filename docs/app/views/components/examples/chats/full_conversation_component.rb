@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Chats
     class FullConversationComponent < Base
@@ -14,7 +16,6 @@ module Examples
           end
 
           chat.header do
-            "Obi-Wan Kenobi"
             time class: "text-xs opacity-50" do
               "2 hours ago"
             end
@@ -37,7 +38,6 @@ module Examples
           end
 
           chat.header do
-            "Anakin"
             time class: "text-xs opacity-50" do
               "2 hours ago"
             end

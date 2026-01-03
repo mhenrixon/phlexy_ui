@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Checkboxes
     class CustomColorsComponent < Base
@@ -10,12 +12,12 @@ module Examples
           "border-orange-400",
           "[--chkbg:theme(colors.indigo.600)]",
           "[--chkfg:orange]",
-          "checked:border-indigo-800"
+          "checked:border-indigo-800",
         ]
 
         custom_colors_classes_2 = [
           "[--chkbg:oklch(var(--a))]",
-          "[--chkfg:oklch(var(--p))]"
+          "[--chkfg:oklch(var(--p))]",
         ]
 
         Checkbox :checked, class: custom_colors_classes_1

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "yaml"
 
 class ExampleViewGenerator < Rails::Generators::NamedBase
@@ -8,7 +10,7 @@ class ExampleViewGenerator < Rails::Generators::NamedBase
   def update_component_registry
     if category.blank?
       say(<<~TXT.squish, :red)
-        You need to specify a category for the component. See 
+        You need to specify a category for the component. See#{' '}
         'rails generate example_view --help' for more information.
       TXT
       exit 1
@@ -52,9 +54,7 @@ class ExampleViewGenerator < Rails::Generators::NamedBase
     components = YAML.load_file(yaml_file_path)
 
     if components["categories"][category]
-      unless components["categories"][category].include?(name)
-        components["categories"][category] << name
-      end
+      components["categories"][category] << name unless components["categories"][category].include?(name)
     else
       components["categories"][category] = [name]
     end

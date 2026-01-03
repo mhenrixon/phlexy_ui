@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Chats
     class ShowView < BaseView
@@ -12,7 +14,7 @@ module Examples
           WithImageComponent,
           WithHeaderAndFooterComponent,
           WithColorsComponent,
-          FullConversationComponent
+          FullConversationComponent,
         ]
       end
     end

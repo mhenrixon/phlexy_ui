@@ -1,8 +1,11 @@
 #!/usr/bin/env ruby
-require "rubygems"
+# frozen_string_literal: true
+
+# Run RuboCop with --ignore-parent-exclusion to prevent the parent
+# config's AllCops/Exclude from affecting the docs folder
+
+ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../Gemfile", __dir__)
+
 require "bundler/setup"
 
-# Explicit RuboCop config increases performance slightly while avoiding config confusion.
-ARGV.unshift("--config", File.expand_path("../.rubocop.yml", __dir__))
-
-load Gem.bin_path("rubocop", "rubocop")
+exec("rubocop", "--ignore-parent-exclusion", *ARGV)

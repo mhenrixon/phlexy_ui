@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Carousels
     class ShowView < BaseView
@@ -14,7 +16,7 @@ module Examples
           HalfWidthItemsComponent,
           VerticalComponent,
           WithIndicatorsComponent,
-          WithNavigationButtonsComponent
+          WithNavigationButtonsComponent,
         ]
       end
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Menus
     class ShowView < BaseView
@@ -29,7 +31,7 @@ module Examples
           HorizontalSubmenuComponent,
           MegaMenuWithSubmenuResponsiveComponent,
           CollapsibleWithSubmenuResponsive,
-          WithoutPaddingAndBorderRadiusComponent
+          WithoutPaddingAndBorderRadiusComponent,
         ]
       end
     end

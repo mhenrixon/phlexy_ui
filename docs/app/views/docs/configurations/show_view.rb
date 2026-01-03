@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Docs
   module Configurations
     class ShowView < ApplicationView

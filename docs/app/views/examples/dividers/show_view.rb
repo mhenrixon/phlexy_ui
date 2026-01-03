@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Dividers
     class ShowView < BaseView
@@ -12,7 +14,7 @@ module Examples
           HorizontalComponent,
           WithColorsComponent,
           PositionsComponent,
-          ResponsiveComponent
+          ResponsiveComponent,
         ]
       end
     end

@@ -1,20 +1,22 @@
+# frozen_string_literal: true
+
 class ExampleComponentGenerator < Rails::Generators::NamedBase
   source_root File.expand_path("templates", __dir__)
 
   argument :title, type: :string, default: "", banner: "Title of the component"
 
   def check_for_show_view
-    unless File.exist?(show_view_path)
-      say(
-        "ShowView file not found at #{show_view_path}. Component not added. " \
-          "Run 'rails generate example_view " \
-          "#{class_path.map(&:classify).join("::")}' to create the " \
-          "ShowView file first.",
-        :red
-      )
+    return if File.exist?(show_view_path)
 
-      exit 1
-    end
+    say(
+      "ShowView file not found at #{show_view_path}. Component not added. " \
+      "Run 'rails generate example_view " \
+      "#{class_path.map(&:classify).join('::')}' to create the " \
+      "ShowView file first.",
+      :red
+    )
+
+    exit 1
   end
 
   def create_component_file
@@ -36,7 +38,7 @@ class ExampleComponentGenerator < Rails::Generators::NamedBase
   private
 
   def file_path_parts
-    class_path.map(&:underscore).map(&:pluralize)
+    class_path.map { |part| part.underscore.pluralize }
   end
 
   def file_name
@@ -62,12 +64,12 @@ class ExampleComponentGenerator < Rails::Generators::NamedBase
     # 2. \n matches the newline after the opening bracket '['
     # 3. (\s+) captures the indentation
     indentation = if file_content =~ /render_examples \[\n(\s+)/
-      # Retrieve the content of the first capture group from the last match.
-      # i.e. the spaces or indentation.
-      Regexp.last_match(1)
-    else
-      "  " # Fallback to 2 spaces if no indentation found.
-    end
+                    # Retrieve the content of the first capture group from the last match.
+                    # i.e. the spaces or indentation.
+                    Regexp.last_match(1)
+                  else
+                    "  " # Fallback to 2 spaces if no indentation found.
+                  end
 
     # The regex captures the render_examples block and the content inside the
     # array brackets.
@@ -84,12 +86,12 @@ class ExampleComponentGenerator < Rails::Generators::NamedBase
 
       # Format the new list with proper indentation.
       new_component_list = existing_components
-        .split(",")
-        .map(&:strip)
-        .reject(&:empty?)
-        .push(component_class_name)
-        .map { |component| "#{indentation}#{component}" }
-        .join(",\n")
+                           .split(",")
+                           .map(&:strip)
+                           .reject(&:empty?)
+                           .push(component_class_name)
+                           .map { |component| "#{indentation}#{component}" }
+                           .join(",\n")
 
       # Remove 2 spaces from the indentation for the closing bracket.
       indentation = indentation[0..-3]

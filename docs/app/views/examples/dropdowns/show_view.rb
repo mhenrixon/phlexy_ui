@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Dropdowns
     class ShowView < BaseView
@@ -22,7 +24,7 @@ module Examples
           ForceOpenComponent,
           CardAsDropdownComponent,
           InNavbarComponent,
-          HelperComponent
+          HelperComponent,
         ]
       end
     end

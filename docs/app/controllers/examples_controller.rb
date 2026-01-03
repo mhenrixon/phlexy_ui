@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ExamplesController < ApplicationController
   before_action :verify_component_exists
 
@@ -27,7 +29,7 @@ class ExamplesController < ApplicationController
 
   def title
     "DaisyUI - #{component.name}"
-  rescue
+  rescue StandardError
     nil
   end
 end

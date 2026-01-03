@@ -7,13 +7,11 @@ class ApplicationView < ApplicationComponent
   # can change that to `Phlex::HTML` if you want to keep views and
   # components independent.
 
-  def breadcrumbs
+  def breadcrumbs(&)
     div class: "breadcrumbs text-sm mb-4 leading-6 font-semibold text-accent" do
       ul do
         li do
-          a do
-            yield
-          end
+          a(&)
         end
       end
     end

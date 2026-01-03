@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Labels
     class ShowView < BaseView
@@ -11,7 +13,7 @@ module Examples
           FloatingComponent,
           WithInputComponent,
           WithSelectComponent,
-          SizesComponent
+          SizesComponent,
         ]
       end
     end

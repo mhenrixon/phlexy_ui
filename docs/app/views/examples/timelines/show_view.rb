@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Timelines
     class ShowView < BaseView
@@ -13,7 +15,7 @@ module Examples
           WithColorsComponent,
           SnapIconComponent,
           CompactComponent,
-          ResponsiveComponent
+          ResponsiveComponent,
         ]
       end
     end

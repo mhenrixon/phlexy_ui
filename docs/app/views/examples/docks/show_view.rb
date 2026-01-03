@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Docks
     class ShowView < BaseView
@@ -10,7 +12,7 @@ module Examples
           BasicComponent,
           SizesComponent,
           WithLabelsComponent,
-          WithActiveComponent
+          WithActiveComponent,
         ]
       end
     end

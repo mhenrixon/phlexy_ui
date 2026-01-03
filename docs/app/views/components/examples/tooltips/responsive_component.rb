@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Tooltips
     class ResponsiveComponent < Base
@@ -6,7 +8,7 @@ module Examples
       end
 
       def example
-        Tooltip responsive: {lg: true}, tip: "hello" do
+        Tooltip responsive: { lg: true }, tip: "hello" do
           Button do
             "Hover me"
           end

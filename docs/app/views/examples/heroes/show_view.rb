@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Heroes
     class ShowView < BaseView
@@ -10,7 +12,7 @@ module Examples
           BasicComponent,
           WithFigureComponent,
           WithOverlayComponent,
-          WithFormComponent
+          WithFormComponent,
         ]
       end
     end

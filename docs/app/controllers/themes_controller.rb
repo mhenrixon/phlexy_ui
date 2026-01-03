@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ThemesController < ApplicationController
   before_action :validate_theme
 
@@ -14,7 +16,7 @@ class ThemesController < ApplicationController
       end
 
       format.html do
-        redirect_back fallback_location: root_path
+        redirect_back_or_to(root_path)
       end
     end
   end
@@ -27,38 +29,38 @@ class ThemesController < ApplicationController
     redirect_to root_path, alert: "Invalid theme"
   end
 
-  VALID_THEMES = [
-    "light",
-    "dark",
-    "cupcake",
-    "bumblebee",
-    "emerald",
-    "corporate",
-    "synthwave",
-    "retro",
-    "cyberpunk",
-    "valentine",
-    "halloween",
-    "garden",
-    "forest",
-    "aqua",
-    "lofi",
-    "pastel",
-    "fantasy",
-    "wireframe",
-    "black",
-    "luxury",
-    "dracula",
-    "cmyk",
-    "autumn",
-    "business",
-    "acid",
-    "lemonade",
-    "night",
-    "coffee",
-    "winter",
-    "dim",
-    "nord",
-    "sunset"
+  VALID_THEMES = %w[
+    light
+    dark
+    cupcake
+    bumblebee
+    emerald
+    corporate
+    synthwave
+    retro
+    cyberpunk
+    valentine
+    halloween
+    garden
+    forest
+    aqua
+    lofi
+    pastel
+    fantasy
+    wireframe
+    black
+    luxury
+    dracula
+    cmyk
+    autumn
+    business
+    acid
+    lemonade
+    night
+    coffee
+    winter
+    dim
+    nord
+    sunset
   ].freeze
 end

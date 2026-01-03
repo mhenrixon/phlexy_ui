@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module MockupPhones
     class ShowView < BaseView
@@ -8,7 +10,7 @@ module Examples
 
         render_examples [
           BasicComponent,
-          WithColorComponent
+          WithColorComponent,
         ]
       end
     end

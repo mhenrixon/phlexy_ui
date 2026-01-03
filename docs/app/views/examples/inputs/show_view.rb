@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Inputs
     class ShowView < BaseView
@@ -13,7 +15,7 @@ module Examples
           GhostComponent,
           DisabledComponent,
           WithLabelComponent,
-          TypesComponent
+          TypesComponent,
         ]
       end
     end

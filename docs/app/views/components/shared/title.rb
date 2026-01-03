@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Shared
   class Title < ApplicationComponent
     def initialize(*modifiers, as: :h1, **options)
@@ -10,7 +12,7 @@ module Shared
       classes = [
         "mb-8",
         *TITLE_MODIFIERS_CLASSES.values_at(*modifiers),
-        options.delete(:class)
+        options.delete(:class),
       ]
 
       public_send as, class: classes, **options, &
@@ -27,7 +29,7 @@ module Shared
       "3xl": "text-3xl",
       "4xl": "text-4xl",
       bold: "font-bold",
-      extrabold: "font-extrabold"
-    }
+      extrabold: "font-extrabold",
+    }.freeze
   end
 end

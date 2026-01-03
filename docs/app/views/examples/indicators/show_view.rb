@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Indicators
     class ShowView < BaseView
@@ -11,7 +13,7 @@ module Examples
           PositionsComponent,
           BadgeIndicatorComponent,
           ForButtonComponent,
-          ForInputComponent
+          ForInputComponent,
         ]
       end
     end

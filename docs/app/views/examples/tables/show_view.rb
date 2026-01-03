@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Tables
     class ShowView < BaseView
@@ -14,7 +16,7 @@ module Examples
           WithVisualElements,
           XsComponent,
           WithPinnedRowsComponent,
-          WithPinnedRowsAndPinnedColsComponent
+          WithPinnedRowsAndPinnedColsComponent,
         ]
       end
     end

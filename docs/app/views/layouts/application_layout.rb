@@ -14,10 +14,10 @@ class ApplicationLayout < ApplicationView
     @title = title
   end
 
-  def view_template(&block)
+  def view_template(&)
     doctype
 
-    html class: "overscroll-auto sm:overscroll-y-none", data: {theme: request.session[:theme] || :light} do
+    html class: "overscroll-auto sm:overscroll-y-none", data: { theme: request.session[:theme] || :light } do
       head do
         title { @title || "DaisyUI Docs" }
         meta name: "viewport", content: "width=device-width,initial-scale=1"
@@ -117,15 +117,13 @@ class ApplicationLayout < ApplicationView
         main do
           render_flash
 
-          Drawer id: :drawer, responsive: {lg: :open} do |drawer|
+          Drawer id: :drawer, responsive: { lg: :open } do |drawer|
             drawer.toggle
             drawer.content do
               Nav(drawer:)
 
               content_wrapper do
-                turbo_frame_tag :content, autoscroll: true do
-                  yield
-                end
+                turbo_frame_tag(:content, autoscroll: true, &)
               end
             end
 
@@ -141,10 +139,8 @@ class ApplicationLayout < ApplicationView
 
   private
 
-  def content_wrapper(&block)
-    div class: "px-4 sm:px-6 md:px-8 pb-8 mt-20" do
-      yield
-    end
+  def content_wrapper(&)
+    div(class: "px-4 sm:px-6 md:px-8 pb-8 mt-20", &)
   end
 
   def render_flash
@@ -155,7 +151,7 @@ class ApplicationLayout < ApplicationView
         "z-40",
         "alert",
         "rounded-none",
-        (type == "alert") ? "alert-error" : "alert-info"
+        type == "alert" ? "alert-error" : "alert-info",
       ]
 
       div(class: classes, role: :alert) do

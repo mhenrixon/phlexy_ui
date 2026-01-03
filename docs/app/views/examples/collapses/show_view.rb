@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Collapses
     class ShowView < BaseView
@@ -13,7 +15,7 @@ module Examples
           WithFocusComponent,
           ForceOpenComponent,
           ForceCloseComponent,
-          WithCustomColorsComponent
+          WithCustomColorsComponent,
         ]
       end
     end

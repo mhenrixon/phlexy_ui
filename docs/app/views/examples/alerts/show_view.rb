@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Alerts
     class ShowView < BaseView
@@ -13,7 +15,7 @@ module Examples
           WarningColorComponent,
           ErrorColorComponent,
           WithButtonsComponent,
-          WithTitleAndDescriptionComponent
+          WithTitleAndDescriptionComponent,
         ]
       end
     end

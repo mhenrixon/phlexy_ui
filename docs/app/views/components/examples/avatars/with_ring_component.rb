@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Avatars
     class WithRingComponent < Base
@@ -9,13 +11,13 @@ module Examples
 
       def example
         Avatar do
-          classes = [
-            "w-24",
-            "rounded-full",
-            "ring",
-            "ring-primary",
-            "ring-offset-base-100",
-            "ring-offset-2"
+          classes = %w[
+            w-24
+            rounded-full
+            ring
+            ring-primary
+            ring-offset-base-100
+            ring-offset-2
           ]
 
           div class: classes do

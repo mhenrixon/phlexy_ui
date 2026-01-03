@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Component
   include ActiveModel::Model
 
@@ -59,24 +61,20 @@ class Component
   private
 
   def file_exists?
-    File.exist?(
+    Rails.root.join(
+      "app",
+      "views",
+      "examples",
+      name.pluralize.underscore,
+      "show_view.rb"
+    ).exist? &&
       Rails.root.join(
         "app",
         "views",
+        "components",
         "examples",
         name.pluralize.underscore,
-        "show_view.rb"
-      )
-    ) &&
-      File.exist?(
-        Rails.root.join(
-          "app",
-          "views",
-          "components",
-          "examples",
-          name.pluralize.underscore,
-          "basic_component.rb"
-        )
-      )
+        "basic_component.rb"
+      ).exist?
   end
 end

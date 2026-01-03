@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Avatars
     class PlaceholderComponent < Base
@@ -6,10 +8,10 @@ module Examples
       end
 
       def example
-        base_classes = [
-          "rounded-full",
-          "bg-neutral",
-          "text-neutral-content"
+        base_classes = %w[
+          rounded-full
+          bg-neutral
+          text-neutral-content
         ]
 
         Avatar :placeholder do

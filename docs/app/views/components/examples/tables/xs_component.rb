@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Tables
     class XsComponent < Base
@@ -61,7 +63,7 @@ module Examples
           OpenStruct.new(name: "Alec Lethby", job: "Teacher", favorite_color: "Khaki"),
           OpenStruct.new(name: "Aland Wilber", job: "Quality Control Specialist", favorite_color: "Purple"),
           OpenStruct.new(name: "Teddie Duerden", job: "Staff Accountant III", favorite_color: "Aquamarine"),
-          OpenStruct.new(name: "Lorelei Blackstone", job: "Data Coordiator", favorite_color: "Red")
+          OpenStruct.new(name: "Lorelei Blackstone", job: "Data Coordiator", favorite_color: "Red"),
         ]
       end
     end

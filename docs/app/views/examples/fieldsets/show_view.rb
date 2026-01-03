@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Fieldsets
     class ShowView < BaseView
@@ -10,7 +12,7 @@ module Examples
           BasicComponent,
           WithLegendComponent,
           WithMultipleInputsComponent,
-          LoginFormComponent
+          LoginFormComponent,
         ]
       end
     end

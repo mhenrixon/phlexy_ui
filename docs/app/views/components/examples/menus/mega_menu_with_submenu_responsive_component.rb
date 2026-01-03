@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Menus
     class MegaMenuWithSubmenuResponsiveComponent < Base
@@ -6,7 +8,7 @@ module Examples
       end
 
       def example
-        Menu :base_200, responsive: {lg: :horizontal}, class: "rounded-box lg:min-w-max" do |menu|
+        Menu :base_200, responsive: { lg: :horizontal }, class: "rounded-box lg:min-w-max" do |menu|
           menu.item do |item|
             a do
               "Solutions"

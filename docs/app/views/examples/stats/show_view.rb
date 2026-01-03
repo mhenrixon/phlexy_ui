@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Stats
     class ShowView < BaseView
@@ -12,7 +14,7 @@ module Examples
           CenteredItemsComponent,
           VerticalComponent,
           ResponsiveComponent,
-          WithCustomColorsComponent
+          WithCustomColorsComponent,
         ]
       end
     end

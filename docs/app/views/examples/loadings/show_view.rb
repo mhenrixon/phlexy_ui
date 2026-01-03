@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Loadings
     class ShowView < BaseView
@@ -13,7 +15,7 @@ module Examples
           BallComponent,
           BarsComponent,
           InfinityComponent,
-          WithColorsComponent
+          WithColorsComponent,
         ]
       end
     end

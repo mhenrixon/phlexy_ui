@@ -19,7 +19,7 @@ bin/console                    # Interactive console
 # Docs development (from docs/)
 bin/dev                        # Start dev server
 bundle exec rspec              # Run docs tests (includes Playwright)
-bundle exec standardrb         # Lint docs code
+bin/rubocop                    # Lint docs code
 bun run build:css              # Build Tailwind CSS
 ```
 
@@ -120,5 +120,5 @@ HEADLESS=false bundle exec rspec         # Watch browser tests run
 All jobs run in parallel:
 - `lint`: RuboCop on gem
 - `gem-test`: Gem specs on Ruby 3.2, 3.3, 3.4, 4.0
-- `docs-lint`: StandardRB, Biome, Stylelint on docs
+- `docs-lint`: RuboCop, Biome, Stylelint on docs
 - `docs-test`: Playwright browser tests on docs

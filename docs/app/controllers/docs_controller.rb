@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DocsController < ApplicationController
   before_action :verify_doc_exists
 
@@ -23,7 +25,7 @@ class DocsController < ApplicationController
 
   def title
     "DaisyUI - #{doc_name.humanize}"
-  rescue
+  rescue StandardError
     nil
   end
 end

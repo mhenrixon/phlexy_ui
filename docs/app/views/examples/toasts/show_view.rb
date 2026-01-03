@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Toasts
     class ShowView < BaseView
@@ -14,7 +16,7 @@ module Examples
           MiddleStartComponent,
           MiddleCenterComponent,
           MiddleEndComponent,
-          WithAlertComponent
+          WithAlertComponent,
         ]
       end
     end

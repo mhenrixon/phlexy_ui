@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Shared
   class DocsSection < ApplicationComponent
     def initialize(*modifiers, **options)
@@ -9,7 +11,7 @@ module Shared
     def view_template(&)
       classes = [
         "space-y-4 mb-8 max-w-4xl",
-        options.delete(:class)
+        options.delete(:class),
       ]
       div class: classes, **options, &
     end

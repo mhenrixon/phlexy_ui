@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Cards
     class ResponsiveComponent < Base
@@ -8,7 +10,7 @@ module Examples
       end
 
       def example
-        Card :base_100, responsive: {lg: :side}, class: "shadow-xl" do |card|
+        Card :base_100, responsive: { lg: :side }, class: "shadow-xl" do |card|
           figure do
             img(src:, alt: "Album")
           end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Kbds
     class ShowView < BaseView
@@ -12,7 +14,7 @@ module Examples
           InTextComponent,
           KeyCombinationComponent,
           ArrowKeysComponent,
-          FunctionKeysComponent
+          FunctionKeysComponent,
         ]
       end
     end

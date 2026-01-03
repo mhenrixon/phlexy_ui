@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Tabs
     class BasicComponent < Base
@@ -6,11 +8,11 @@ module Examples
       end
 
       def example
-        render DaisyUI::Tabs.new { |tabs|
+        render(DaisyUI::Tabs.new do |tabs|
           tabs.tab "Tab 1"
           tabs.tab "Tab 2", :active
           tabs.tab "Tab 3"
-        }
+        end)
       end
     end
   end

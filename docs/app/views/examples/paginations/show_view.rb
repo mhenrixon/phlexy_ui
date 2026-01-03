@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Paginations
     class ShowView < BaseView
@@ -10,7 +12,7 @@ module Examples
           BasicComponent,
           SizesComponent,
           WithPrevNextComponent,
-          WithDisabledComponent
+          WithDisabledComponent,
         ]
       end
     end

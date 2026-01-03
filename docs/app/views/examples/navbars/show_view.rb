@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Navbars
     class ShowView < BaseView
@@ -11,7 +13,7 @@ module Examples
           WithTitleAndIconComponent,
           WithIconAtStartAndEndComponent,
           WithMenuAndSubmenuComponent,
-          WithSearchAndDropdownComponent
+          WithSearchAndDropdownComponent,
         ]
       end
     end

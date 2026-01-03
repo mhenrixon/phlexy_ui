@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Fieldsets
     class WithLegendComponent < Base

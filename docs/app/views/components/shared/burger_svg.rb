@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Shared
   class BurgerSvg < ApplicationComponent
     def view_template

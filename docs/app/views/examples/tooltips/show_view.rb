@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Tooltips
     class ShowView < BaseView
@@ -20,7 +22,7 @@ module Examples
           SuccessComponent,
           WarningComponent,
           ErrorComponent,
-          ResponsiveComponent
+          ResponsiveComponent,
         ]
       end
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Helper to check if Tailwind is running
 module Tailwind
   def self.running_in_current_directory?
@@ -19,7 +21,7 @@ RSpec.configure do |config|
     unless ENV["CI"] || ENV["GITHUB"]
       examples = RSpec.world.filtered_examples.values.flatten
       has_no_system_tests = examples.none? do |example|
-        example.metadata[:type].in?(%i[system controller request])
+        example.metadata[:type].in?([:system, :controller, :request])
       end
 
       if has_no_system_tests
@@ -45,14 +47,12 @@ RSpec.configure do |config|
   end
 
   config.after(:suite) do
-    if ENV["CI"].blank? && ENV["GITHUB"].blank?
-      unless Tailwind.running_in_current_directory?
-        $stdout.puts "\n🐇  Clobbering assets.\n"
-        system(<<~SH)
-          bin/rails assets:clobber &&
-            touch app/assets/stylesheets/application.tailwind.css
-        SH
-      end
+    if ENV["CI"].blank? && ENV["GITHUB"].blank? && !Tailwind.running_in_current_directory?
+      $stdout.puts "\n🐇  Clobbering assets.\n"
+      system(<<~SH)
+        bin/rails assets:clobber &&
+          touch app/assets/stylesheets/application.tailwind.css
+      SH
     end
   end
 end

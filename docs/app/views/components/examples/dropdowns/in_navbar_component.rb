@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Dropdowns
     class InNavbarComponent < Base
@@ -6,7 +8,7 @@ module Examples
       end
 
       def example
-        Navbar class: "bg-base-200 rounded-box" do |navbar|
+        Navbar class: "bg-base-200 rounded-box" do |_navbar|
           div class: "flex-1 px-2 lg:flex-none" do
             a class: "text-lg font-bold" do
               "daisyUI"

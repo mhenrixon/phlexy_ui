@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Modals
     class ResponsiveComponent < Base
@@ -10,7 +12,7 @@ module Examples
           "open modal"
         end
 
-        Modal :tap_outside_to_close, :bottom, responsive: {sm: :middle}, id: "my_modal_6" do |modal|
+        Modal :tap_outside_to_close, :bottom, responsive: { sm: :middle }, id: "my_modal_6" do |modal|
           modal.body do
             h3 class: "text-lg font-bold" do
               "Hello!"

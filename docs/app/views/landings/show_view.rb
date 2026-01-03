@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Landings
   class ShowView < ApplicationView
     include Phlex::Rails::Helpers::ImagePath
@@ -32,8 +34,8 @@ module Landings
 
           h2 class: "text-xl" do
             <<~TXT
-              DaisyUI is a component library built with Phlex, a Ruby gem for 
-              building fast object-oriented HTML components. On top of DaisyUI, 
+              DaisyUI is a component library built with Phlex, a Ruby gem for#{' '}
+              building fast object-oriented HTML components. On top of DaisyUI,#{' '}
               the most popular component library for Tailwind CSS.
             TXT
           end
@@ -43,7 +45,7 @@ module Landings
               :outline,
               as: :a,
               href: examples_path(:button),
-              data: {turbo_frame: :_top}
+              data: { turbo_frame: :_top }
             ) do
               "Browse components"
             end
@@ -52,7 +54,7 @@ module Landings
               :primary,
               as: :a,
               href: docs_path(:installation),
-              data: {turbo_frame: :_top}
+              data: { turbo_frame: :_top }
             ) do
               "Get started"
             end

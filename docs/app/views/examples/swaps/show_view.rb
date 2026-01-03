@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Swaps
     class ShowView < BaseView
@@ -11,7 +13,7 @@ module Examples
           RotateComponent,
           FlipComponent,
           HamburgerComponent,
-          TextComponent
+          TextComponent,
         ]
       end
     end

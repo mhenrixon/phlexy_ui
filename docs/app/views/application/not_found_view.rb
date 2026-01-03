@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Application
   class NotFoundView < ApplicationView
     include Phlex::Rails::Helpers::LinkTo

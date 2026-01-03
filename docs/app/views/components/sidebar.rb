@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Sidebar < ApplicationView
   include Phlex::Rails::Helpers::ImageTag
   include Phlex::Rails::Helpers::LinkTo
@@ -11,7 +13,7 @@ class Sidebar < ApplicationView
           as: :a,
           href: root_path,
           class: "text-lg md:text-2xl font-bold mt-2",
-          data: {turbo_frame: :content, turbo_action: :advance}
+          data: { turbo_frame: :content, turbo_action: :advance }
         ) do
           image_tag "daisyui-mark.svg", class: "w-12 h-12"
           plain "DaisyUI"
@@ -33,15 +35,15 @@ class Sidebar < ApplicationView
             submenu.title { "📚 Docs" }
 
             submenu.item do
-              link_to "About", docs_path(:about), data: {turbo_frame: :content, turbo_action: :advance}
+              link_to "About", docs_path(:about), data: { turbo_frame: :content, turbo_action: :advance }
             end
 
             submenu.item do
-              link_to "Installation", docs_path(:installation), data: {turbo_frame: :content, turbo_action: :advance}
+              link_to "Installation", docs_path(:installation), data: { turbo_frame: :content, turbo_action: :advance }
             end
 
             submenu.item do
-              link_to "Configuration", docs_path(:configuration), data: {turbo_frame: :content, turbo_action: :advance}
+              link_to "Configuration", docs_path(:configuration), data: { turbo_frame: :content, turbo_action: :advance }
             end
           end
         end
@@ -63,14 +65,14 @@ class Sidebar < ApplicationView
                         link_to(
                           component.name,
                           examples_path(component),
-                          data: {turbo_frame: :content, turbo_action: :advance}
+                          data: { turbo_frame: :content, turbo_action: :advance }
                         )
                       elsif component.implemented?
                         link_to(
                           component.github_url,
                           class: "!cursor-alias",
-                          data: {turbo_frame: :content},
-                          target: "_blank"
+                          data: { turbo_frame: :content },
+                          target: "_blank", rel: "noopener"
                         ) do
                           span do
                             component.name
@@ -91,7 +93,7 @@ class Sidebar < ApplicationView
                           component.name,
                           "#",
                           class: "opacity-50 !cursor-default",
-                          data: {turbo_frame: :content}
+                          data: { turbo_frame: :content }
                         )
                       end
                     end

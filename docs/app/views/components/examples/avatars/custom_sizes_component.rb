@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Avatars
     class CustomSizesComponent < Base
@@ -8,7 +10,7 @@ module Examples
       end
 
       def example
-        ["w-32", "w-20", "w-16", "w-8"].each do |width|
+        %w[w-32 w-20 w-16 w-8].each do |width|
           Avatar do
             div class: "rounded #{width}" do
               img src:, alt:

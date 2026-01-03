@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   class Base < ApplicationComponent
     def initialize(component:)
@@ -17,8 +19,7 @@ module Examples
       raise NotImplementedError, "Subclasses must implement a :title method."
     end
 
-    def subtitle
-    end
+    def subtitle; end
 
     def example
       raise NotImplementedError, "Subclasses must implement an :example method."

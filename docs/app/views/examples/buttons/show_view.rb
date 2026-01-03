@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Buttons
     class ShowView < BaseView
@@ -26,7 +28,7 @@ module Examples
           BlockComponent,
           WithLoadingSpinnerComponent,
           WithLoadingSpinnerAndTextComponent,
-          NoAnimationComponent
+          NoAnimationComponent,
         ]
       end
     end

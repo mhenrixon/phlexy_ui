@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Chats
     class WithHeaderAndFooterComponent < Base
@@ -8,7 +10,6 @@ module Examples
       def example
         Chat :start do |chat|
           chat.header do
-            "Obi-Wan Kenobi"
             time class: "text-xs opacity-50" do
               "12:45"
             end
@@ -25,7 +26,6 @@ module Examples
 
         Chat :end do |chat|
           chat.header do
-            "Anakin"
             time class: "text-xs opacity-50" do
               "12:46"
             end

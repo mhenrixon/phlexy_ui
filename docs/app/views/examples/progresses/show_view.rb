@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Progresses
     class ShowView < BaseView
@@ -9,7 +11,7 @@ module Examples
         render_examples [
           BasicComponent,
           WithColorsComponent,
-          IndeterminateComponent
+          IndeterminateComponent,
         ]
       end
     end

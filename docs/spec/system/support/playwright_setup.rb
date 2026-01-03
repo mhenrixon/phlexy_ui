@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "capybara-playwright-driver"
 
 Capybara.register_driver(:daisyui_playwright) do |app|
@@ -43,7 +45,7 @@ Capybara.register_driver(:daisyui_playwright) do |app|
     slowMo: slowmo,
     args:,
     viewport: { width: 1920, height: 1080 },
-    permissions: %w[clipboard-read clipboard-write]
+    permissions: %w[clipboard-read clipboard-write],
   }.freeze
 
   Capybara::Playwright::Driver.new(app, **driver_opts)

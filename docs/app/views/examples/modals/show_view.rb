@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Modals
     class ShowView < BaseView
@@ -12,7 +14,7 @@ module Examples
           ClosesWhenClickedOutsideComponent,
           WithACloseButtonAtCornerComponent,
           WithCustomWidthComponent,
-          ResponsiveComponent
+          ResponsiveComponent,
         ]
       end
     end

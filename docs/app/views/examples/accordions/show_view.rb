@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Accordions
     class ShowView < BaseView
@@ -12,7 +14,7 @@ module Examples
           WithPlusMinusIconComponent,
           WithJoinComponent,
           WithCustomColorsComponent,
-          WithBackgroundColorComponent
+          WithBackgroundColorComponent,
         ]
       end
     end

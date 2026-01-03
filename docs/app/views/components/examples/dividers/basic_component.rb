@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Dividers
     class BasicComponent < Base
@@ -10,8 +12,6 @@ module Examples
           div class: "card bg-base-300 rounded-box grid h-20 place-items-center" do
             "Content"
           end
-
-          Divider
 
           div class: "card bg-base-300 rounded-box grid h-20 place-items-center" do
             "Content"

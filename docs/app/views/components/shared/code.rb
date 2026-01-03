@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Shared
   class Code < ApplicationComponent
     HIGHLIGHT_CSS_CLASS = "highlight"
@@ -26,7 +28,7 @@ module Shared
       classes = [
         HIGHLIGHT_CSS_CLASS,
         ("mockup-code" if mockup),
-        ("inline-block pl-1 rounded" if inline)
+        ("inline-block pl-1 rounded" if inline),
       ]
 
       div class: classes do

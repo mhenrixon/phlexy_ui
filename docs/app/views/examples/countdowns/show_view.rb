@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Countdowns
     class ShowView < BaseView
@@ -11,7 +13,7 @@ module Examples
           LargeTextComponent,
           WithLabelsComponent,
           ClockCountdownComponent,
-          InBoxesComponent
+          InBoxesComponent,
         ]
       end
     end

@@ -1,14 +1,16 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
 plugin "bundler-symlink"
 
 # Rails core
-gem "rails", ">= 8.1.0"
-gem "propshaft"
-gem "sqlite3"
-gem "puma"
 gem "bootsnap", require: false
-gem "tzinfo-data", platforms: %i[windows jruby]
+gem "propshaft"
+gem "puma"
+gem "rails", ">= 8.1.0"
+gem "sqlite3"
+gem "tzinfo-data", platforms: [:windows, :jruby]
 
 # Frontend
 gem "importmap-rails"
@@ -16,14 +18,14 @@ gem "stimulus-rails"
 gem "turbo-rails"
 
 # Views
-gem "phlex-rails"
 gem "daisyui", path: "..", require: "daisy_ui"
-gem "rouge"
 gem "method_source"
+gem "phlex-rails"
+gem "rouge"
 
 # Database & Performance
-gem "litestack", ">= 0.4.5", github: "oldmoe/litestack"
 gem "friendly_id"
+gem "litestack", ">= 0.4.5", github: "oldmoe/litestack"
 
 # Utilities
 gem "jbuilder"
@@ -31,21 +33,25 @@ gem "name_of_person"
 gem "ruby-vips"
 
 group :development, :test do
-  gem "debug", platforms: %i[mri windows], require: "debug/prelude"
   gem "brakeman", require: false
+  gem "debug", platforms: [:mri, :windows], require: "debug/prelude"
   gem "dotenv"
-  gem "rspec-rails"
   gem "factory_bot_rails"
   gem "faker"
-  gem "prosopite"
   gem "pg_query"
+  gem "prosopite"
+  gem "rspec-rails"
 end
 
 group :development do
-  gem "web-console"
-  gem "standard"
   gem "annotate"
   gem "dockerfile-rails"
+  gem "rubocop", require: false
+  gem "rubocop-performance", require: false
+  gem "rubocop-rails", require: false
+  gem "rubocop-rake", require: false
+  gem "rubocop-rspec", require: false
+  gem "web-console"
 end
 
 group :test do

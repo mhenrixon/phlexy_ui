@@ -68,7 +68,7 @@ jobs:
         run: bun install --frozen-lockfile
 
       - name: Lint Ruby
-        run: bundle exec standardrb
+        run: bin/rubocop
 
       - name: Lint JavaScript
         run: bun run lint:js

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Cards
     class ShowView < BaseView
@@ -19,7 +21,7 @@ module Examples
           WithActionOnTopComponent,
           GlassComponent,
           WithImageOnSideComponent,
-          ResponsiveComponent
+          ResponsiveComponent,
         ]
       end
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Ratings
     class ShowView < BaseView
@@ -12,7 +14,7 @@ module Examples
           HalfStarsComponent,
           WithHiddenComponent,
           MaskShapesComponent,
-          ReadOnlyComponent
+          ReadOnlyComponent,
         ]
       end
     end

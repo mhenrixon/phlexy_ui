@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Tabs
     class ShowView < BaseView
@@ -12,7 +14,7 @@ module Examples
           LiftedComponent,
           BoxedComponent,
           SizesComponent,
-          WithContentComponent
+          WithContentComponent,
         ]
       end
     end

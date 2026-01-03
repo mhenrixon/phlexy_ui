@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   class DemoComponent < ApplicationComponent
     include Phlex::Rails::Helpers::LinkTo
@@ -39,7 +41,7 @@ module Examples
     def render_header
       header class: "sticky top-[4.5rem] z-10 bg-base-100 pb-2" do
         h2 class: "text-xs font-bold mb-2", id: title.parameterize do
-          link_to "# ", examples_path(component, anchor: title.parameterize), data: {turbo_frame: :_top}
+          link_to "# ", examples_path(component, anchor: title.parameterize), data: { turbo_frame: :_top }
 
           span do
             title
@@ -84,7 +86,7 @@ module Examples
 
         # Positioning
         "sticky",
-        "top-[7.8rem]"
+        "top-[7.8rem]",
       ]
 
       style = <<~CSS

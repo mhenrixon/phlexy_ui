@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Toggles
     class BasicComponent < Base
@@ -6,7 +8,6 @@ module Examples
       end
 
       def example
-        Toggle
         Toggle checked: true
       end
     end

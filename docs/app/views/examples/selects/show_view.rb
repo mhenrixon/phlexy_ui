@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Selects
     class ShowView < BaseView
@@ -12,7 +14,7 @@ module Examples
           SizesComponent,
           GhostComponent,
           DisabledComponent,
-          WithLabelComponent
+          WithLabelComponent,
         ]
       end
     end

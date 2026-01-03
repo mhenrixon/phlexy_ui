@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module BetterRailsSystemTests
   # Use our `Capybara.save_path` to store screenshots with other capybara artifacts
   # (Rails screenshots path is not configurable https://github.com/rails/rails/blob/49baf092439fc74fc3377b12e3334c3dd9d0752f/actionpack/lib/action_dispatch/system_testing/test_helpers/screenshot_helper.rb#L79)
@@ -61,8 +63,8 @@ module BetterRailsSystemTests
   end
 
   # Helper to check if a component is visible and properly rendered
-  def expect_component(selector, **options)
-    expect(page).to have_css(selector, **options)
+  def expect_component(selector, **)
+    expect(page).to have_css(selector, **)
   end
 end
 

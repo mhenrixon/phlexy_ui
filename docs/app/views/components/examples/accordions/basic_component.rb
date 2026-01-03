@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Accordions
     class BasicComponent < Base
@@ -12,7 +14,7 @@ module Examples
           end
 
           p do
-            "Click the \"Sign Up\" button in the top right corner and follow the registration process."
+            'Click the "Sign Up" button in the top right corner and follow the registration process.'
           end
         end
 
@@ -22,7 +24,7 @@ module Examples
           end
 
           p do
-            "Click \"Forgot Password\" on the login page and follow the instructions sent to your email."
+            'Click "Forgot Password" on the login page and follow the instructions sent to your email.'
           end
         end
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module RadialProgresses
     class ShowView < BaseView
@@ -11,7 +13,7 @@ module Examples
           DifferentValuesComponent,
           CustomColorComponent,
           WithBackgroundColorAndBorderComponent,
-          CustomSizeAndCustomThicknessComponent
+          CustomSizeAndCustomThicknessComponent,
         ]
       end
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Actions
     class ShowView < BaseView
@@ -7,7 +9,7 @@ module Examples
         end
 
         render_examples [
-          BasicComponent
+          BasicComponent,
         ]
       end
     end

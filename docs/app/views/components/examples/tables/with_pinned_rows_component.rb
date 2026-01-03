@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Tables
     class WithPinnedRowsComponent < Base
@@ -77,8 +79,8 @@ module Examples
           "X-Men",
           "X-Men",
           "Zatanna",
-          "Zatara"
-        ].group_by { |superhero| superhero.first }
+          "Zatara",
+        ].group_by(&:first)
       end
     end
   end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Examples
   module Tables
     class WithAnActiveRow < Base
@@ -35,7 +37,7 @@ module Examples
         [
           OpenStruct.new(name: "Cy Ganderton", job: "Quality Control Specialist", favorite_color: "Blue"),
           OpenStruct.new(name: "Hart Hagerty", job: "Desktop Support Technician", favorite_color: "Purple"),
-          OpenStruct.new(name: "Brice Swyre", job: "Tax Accountant", favorite_color: "Red")
+          OpenStruct.new(name: "Brice Swyre", job: "Tax Accountant", favorite_color: "Red"),
         ]
       end
     end

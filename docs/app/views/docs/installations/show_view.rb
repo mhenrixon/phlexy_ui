@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Docs
   module Installations
     class ShowView < ApplicationView
@@ -59,8 +61,8 @@ module Docs
                   plain "Install TailwindCSS by following the instructions in the "
 
                   link_to "TailwindCSS documentation,",
-                    "https://tailwindcss.com/docs/installation",
-                    class: "link link-primary", target: "_blank"
+                          "https://tailwindcss.com/docs/installation",
+                          class: "link link-primary", target: "_blank", rel: "noopener"
 
                   plain " using either the Tailwind CLI or PostCSS."
                 end
@@ -75,8 +77,8 @@ module Docs
                   plain "Install DaisyUI by following the instructions in the "
 
                   link_to "DaisyUI documentation",
-                    "https://daisyui.com/docs/install/",
-                    class: "link link-primary", target: "_blank"
+                          "https://daisyui.com/docs/install/",
+                          class: "link link-primary", target: "_blank", rel: "noopener"
 
                   plain " as a Node package."
                 end
@@ -97,8 +99,8 @@ module Docs
                 the "
 
                   link_to "tailwind-cli-extra repo.",
-                    "https://github.com/dobicinaitis/tailwind-cli-extra",
-                    class: "link link-primary", target: "_blank"
+                          "https://github.com/dobicinaitis/tailwind-cli-extra",
+                          class: "link link-primary", target: "_blank", rel: "noopener"
                 end
 
                 p do
@@ -111,9 +113,9 @@ module Docs
                 with DaisyUI yourself, you can follow the instructions "
 
                   link_to "here.",
-                    "https://github.com/tailwindlabs/tailwindcss/" \
-                      "discussions/12294#discussioncomment-8268378",
-                    class: "link link-primary", target: "_blank"
+                          "https://github.com/tailwindlabs/tailwindcss/" \
+                          "discussions/12294#discussioncomment-8268378",
+                          class: "link link-primary", target: "_blank", rel: "noopener"
                 end
               end
 
@@ -133,8 +135,8 @@ module Docs
                 instructions in the "
 
                   link_to "tailwindcss-rails repo.",
-                    "https://github.com/rails/tailwindcss-rails",
-                    class: "link link-primary", target: "_blank"
+                          "https://github.com/rails/tailwindcss-rails",
+                          class: "link link-primary", target: "_blank", rel: "noopener"
                 end
 
                 p do
@@ -163,8 +165,8 @@ module Docs
             plain "Install Phlex by following the instructions in the "
 
             link_to "Phlex documentation.",
-              "https://www.phlex.fun/#rails-introduction",
-              class: "link link-primary", target: "_blank"
+                    "https://www.phlex.fun/#rails-introduction",
+                    class: "link link-primary", target: "_blank", rel: "noopener"
           end
         end
 
@@ -286,7 +288,7 @@ module Docs
             module.exports = {
               content: [
                 // ... other paths
-                // 
+                //#{' '}
                 // Note the "rb" extension at the end
                 "./app/views/**/*.{erb,haml,html,slim,rb}",
               ],
