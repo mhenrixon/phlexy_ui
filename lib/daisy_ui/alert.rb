@@ -9,6 +9,44 @@ module DaisyUI
     end
 
     register_modifiers(
+      # Styles
+      # "sm:alert-outline"
+      # "@sm:alert-outline"
+      # "md:alert-outline"
+      # "@md:alert-outline"
+      # "lg:alert-outline"
+      # "@lg:alert-outline"
+      outline: "alert-outline",
+      # "sm:alert-dash"
+      # "@sm:alert-dash"
+      # "md:alert-dash"
+      # "@md:alert-dash"
+      # "lg:alert-dash"
+      # "@lg:alert-dash"
+      dash: "alert-dash",
+      # "sm:alert-soft"
+      # "@sm:alert-soft"
+      # "md:alert-soft"
+      # "@md:alert-soft"
+      # "lg:alert-soft"
+      # "@lg:alert-soft"
+      soft: "alert-soft",
+      # Directions
+      # "sm:alert-vertical"
+      # "@sm:alert-vertical"
+      # "md:alert-vertical"
+      # "@md:alert-vertical"
+      # "lg:alert-vertical"
+      # "@lg:alert-vertical"
+      vertical: "alert-vertical",
+      # "sm:alert-horizontal"
+      # "@sm:alert-horizontal"
+      # "md:alert-horizontal"
+      # "@md:alert-horizontal"
+      # "lg:alert-horizontal"
+      # "@lg:alert-horizontal"
+      horizontal: "alert-horizontal",
+      # Colors
       # "sm:alert-info"
       # "@sm:alert-info"
       # "md:alert-info"

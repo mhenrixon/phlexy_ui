@@ -5,6 +5,47 @@ require "spec_helper"
 describe DaisyUI::Alert do
   subject(:output) { render described_class.new }
 
+  it "is expected to match the formatted HTML" do
+    expected_html = html <<~HTML
+      <div role="alert" class="alert"></div>
+    HTML
+
+    expect(output).to eq(expected_html)
+  end
+
+  describe "modifiers" do
+    {
+      # Styles
+      outline: "alert-outline",
+      dash: "alert-dash",
+      soft: "alert-soft",
+      # Directions
+      vertical: "alert-vertical",
+      horizontal: "alert-horizontal",
+      # Colors
+      info: "alert-info",
+      success: "alert-success",
+      warning: "alert-warning",
+      error: "alert-error",
+      neutral: "alert-neutral",
+      primary: "alert-primary",
+      secondary: "alert-secondary",
+      accent: "alert-accent"
+    }.each do |modifier, css|
+      context "when given :#{modifier} modifier" do
+        subject(:output) { render described_class.new(modifier) }
+
+        it "renders it apart from the main class" do
+          expected_html = html <<~HTML
+            <div role="alert" class="alert #{css}"></div>
+          HTML
+
+          expect(output).to eq(expected_html)
+        end
+      end
+    end
+  end
+
   describe "responsiveness" do
     %i[sm md lg xl @sm @md @lg @xl].each do |viewport|
       context "when given an :#{viewport} responsive option as a single argument" do
