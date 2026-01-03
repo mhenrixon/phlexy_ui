@@ -10,3 +10,15 @@
 # rspec failure tracking
 .rspec_status
 *.gem
+
+# Docs app ignores
+/docs/.bundle/
+/docs/tmp/
+/docs/log/
+/docs/storage/
+/docs/node_modules/
+/docs/db/*.sqlite3
+/docs/db/*.sqlite3-*
+/docs/public/assets/
+/docs/public/vite*/
+/docs/bun.lockb
