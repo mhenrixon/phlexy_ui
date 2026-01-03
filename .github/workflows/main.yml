@@ -8,15 +8,30 @@ on:
   pull_request:
 
 jobs:
-  build:
+  lint:
+    runs-on: ubuntu-latest
+    name: Lint
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.4
+          bundler-cache: true
+      - name: Run RuboCop
+        run: bundle exec rubocop
+
+  test:
     runs-on: ubuntu-latest
     name: Ruby ${{ matrix.ruby }}
     strategy:
+      fail-fast: false
       matrix:
         ruby:
-          - 3.2.9
-          - 3.3.9
-          - 3.4.7
+          - "3.2"
+          - "3.3"
+          - "3.4"
+          - "4.0"
 
     steps:
       - uses: actions/checkout@v4
