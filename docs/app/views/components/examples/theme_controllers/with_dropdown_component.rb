@@ -7,7 +7,7 @@ module Examples
 
       def example
         Dropdown do |dropdown|
-          dropdown.trigger(:ghost, :sm) { "Theme" }
+          dropdown.button(:ghost, :sm) { "Theme" }
           dropdown.content class: "bg-base-300 rounded-box w-52 p-2" do
             ul class: "menu menu-sm" do
               li do

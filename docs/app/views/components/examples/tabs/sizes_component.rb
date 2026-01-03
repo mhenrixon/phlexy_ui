@@ -7,29 +7,29 @@ module Examples
 
       def example
         div class: "flex flex-col gap-4" do
-          DaisyUI::Tabs.new :border, :xs do |tabs|
+          render DaisyUI::Tabs.new(:border, :xs) { |tabs|
             tabs.tab "XS"
             tabs.tab "Tabs", :active
             tabs.tab "Size"
-          end
+          }
 
-          DaisyUI::Tabs.new :border, :sm do |tabs|
+          render DaisyUI::Tabs.new(:border, :sm) { |tabs|
             tabs.tab "SM"
             tabs.tab "Tabs", :active
             tabs.tab "Size"
-          end
+          }
 
-          DaisyUI::Tabs.new :border, :md do |tabs|
+          render DaisyUI::Tabs.new(:border, :md) { |tabs|
             tabs.tab "MD"
             tabs.tab "Tabs", :active
             tabs.tab "Size"
-          end
+          }
 
-          DaisyUI::Tabs.new :border, :lg do |tabs|
+          render DaisyUI::Tabs.new(:border, :lg) { |tabs|
             tabs.tab "LG"
             tabs.tab "Tabs", :active
             tabs.tab "Size"
-          end
+          }
         end
       end
     end

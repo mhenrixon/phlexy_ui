@@ -10,19 +10,19 @@ module Examples
       end
 
       def example
-        Timeline :vertical, class: "lg:timeline-horizontal" do
+        Timeline :vertical, class: "lg:timeline-horizontal" do |timeline|
           li do
-            Timeline.new.start class: "timeline-box" do
+            timeline.start class: "timeline-box" do
               "Step 1"
             end
-            Timeline.new.middle
+            timeline.middle
             hr
           end
 
           li do
             hr
-            Timeline.new.middle
-            Timeline.new.end class: "timeline-box" do
+            timeline.middle
+            timeline.end class: "timeline-box" do
               "Step 2"
             end
             hr
@@ -30,17 +30,17 @@ module Examples
 
           li do
             hr
-            Timeline.new.start class: "timeline-box" do
+            timeline.start class: "timeline-box" do
               "Step 3"
             end
-            Timeline.new.middle
+            timeline.middle
             hr
           end
 
           li do
             hr
-            Timeline.new.middle
-            Timeline.new.end class: "timeline-box" do
+            timeline.middle
+            timeline.end class: "timeline-box" do
               "Step 4"
             end
           end

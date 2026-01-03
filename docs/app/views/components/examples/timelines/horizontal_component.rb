@@ -6,19 +6,19 @@ module Examples
       end
 
       def example
-        Timeline :horizontal do
+        Timeline :horizontal do |timeline|
           li do
-            Timeline.new.start class: "timeline-box" do
+            timeline.start class: "timeline-box" do
               "1984"
             end
-            Timeline.new.middle
+            timeline.middle
             hr
           end
 
           li do
             hr
-            Timeline.new.middle
-            Timeline.new.end class: "timeline-box" do
+            timeline.middle
+            timeline.end class: "timeline-box" do
               "1998"
             end
             hr
@@ -26,17 +26,17 @@ module Examples
 
           li do
             hr
-            Timeline.new.start class: "timeline-box" do
+            timeline.start class: "timeline-box" do
               "2001"
             end
-            Timeline.new.middle
+            timeline.middle
             hr
           end
 
           li do
             hr
-            Timeline.new.middle
-            Timeline.new.end class: "timeline-box" do
+            timeline.middle
+            timeline.end class: "timeline-box" do
               "2007"
             end
             hr
@@ -44,10 +44,10 @@ module Examples
 
           li do
             hr
-            Timeline.new.start class: "timeline-box" do
+            timeline.start class: "timeline-box" do
               "2015"
             end
-            Timeline.new.middle
+            timeline.middle
           end
         end
       end

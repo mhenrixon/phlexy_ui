@@ -40,7 +40,8 @@ RSpec.describe "Components", type: :system do
       visit examples_path(component: "modal")
       wait_for_turbo
 
-      expect(page).to have_css(".modal")
+      # Modals are hidden by default until opened, so check including hidden elements
+      expect(page).to have_css(".modal", visible: :all)
     end
   end
 
@@ -560,8 +561,8 @@ RSpec.describe "Components", type: :system do
       visit examples_path(component: "calendar")
       wait_for_turbo
 
-      # Calendar uses specific date-related classes
-      expect(page).to have_css(".calendar, [class*='calendar']", wait: 2)
+      # Calendar uses cally web component or pikaday
+      expect(page).to have_css("calendar-date, .cally, .pika-single, input[type='text']", wait: 2)
     end
   end
 

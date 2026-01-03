@@ -44,4 +44,17 @@ RSpec.configure do |config|
     Rails.application.default_url_options[:host] = was_host
     Rails.application.default_url_options[:port] = was_port
   end
+
+  # Save page HTML on failure for debugging
+  config.after(:each, type: :system) do |example|
+    if example.exception
+      # Save HTML to file
+      html_path = "tmp/capybara/failures_#{example.id.tr("/", "_").tr(":", "_")}.html"
+      File.write(html_path, page.html)
+      puts "\n[HTML saved to: #{html_path}]"
+      puts "\n[Page URL: #{page.current_url}]"
+      puts "\n[Page HTML snippet - first 2000 chars]:"
+      puts page.html[0..2000]
+    end
+  end
 end

@@ -9,13 +9,40 @@ module DaisyUI
       super
     end
 
-    def view_template(&)
-      public_send(as, class: classes, **attributes, &)
+    def view_template
+      public_send(as, class: classes, **attributes) do
+        yield self if block_given?
+      end
     end
 
-    def step(**options, &)
-      li(class: component_classes("step", options:), **options, &)
+    def step(*step_modifiers, **options, &)
+      step_classes = build_step_classes(step_modifiers, options)
+      li(class: step_classes, **options, &)
     end
+
+    private
+
+    def build_step_classes(step_modifiers, options)
+      base = apply_prefix("step")
+      mod_classes = step_modifiers.filter_map { |m| apply_prefix(step_modifier_map[m]) }
+      custom = options.delete(:class)
+      merge_classes(base, *mod_classes, custom)
+    end
+
+    def step_modifier_map
+      {
+        primary: "step-primary",
+        secondary: "step-secondary",
+        accent: "step-accent",
+        neutral: "step-neutral",
+        info: "step-info",
+        success: "step-success",
+        warning: "step-warning",
+        error: "step-error"
+      }
+    end
+
+    public
 
     def icon(**options, &)
       div(class: component_classes("step-icon", options:), **options, &)

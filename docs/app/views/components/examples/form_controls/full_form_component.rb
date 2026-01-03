@@ -28,7 +28,7 @@ module Examples
             Input type: "password", placeholder: "Enter password", required: true
           end
 
-          Button :primary { "Submit" }
+          Button(:primary) { "Submit" }
         end
       end
     end

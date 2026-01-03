@@ -6,10 +6,10 @@ module Examples
       end
 
       def example
-        Timeline :compact, :vertical do
+        Timeline :compact, :vertical do |timeline|
           li do
-            Timeline.new.middle
-            Timeline.new.end class: "timeline-box" do
+            timeline.middle
+            timeline.end class: "timeline-box" do
               "2020"
             end
             hr
@@ -17,8 +17,8 @@ module Examples
 
           li do
             hr
-            Timeline.new.middle
-            Timeline.new.end class: "timeline-box" do
+            timeline.middle
+            timeline.end class: "timeline-box" do
               "2021"
             end
             hr
@@ -26,8 +26,8 @@ module Examples
 
           li do
             hr
-            Timeline.new.middle
-            Timeline.new.end class: "timeline-box" do
+            timeline.middle
+            timeline.end class: "timeline-box" do
               "2022"
             end
             hr
@@ -35,8 +35,8 @@ module Examples
 
           li do
             hr
-            Timeline.new.middle
-            Timeline.new.end class: "timeline-box" do
+            timeline.middle
+            timeline.end class: "timeline-box" do
               "2023"
             end
           end

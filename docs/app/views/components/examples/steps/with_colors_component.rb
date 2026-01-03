@@ -6,12 +6,12 @@ module Examples
       end
 
       def example
-        DaisyUI::Steps.new :horizontal do |steps|
+        render DaisyUI::Steps.new(:horizontal) { |steps|
           steps.step(:success) { "Success" }
           steps.step(:info) { "Info" }
           steps.step(:warning) { "Warning" }
           steps.step(:error) { "Error" }
-        end
+        }
       end
     end
   end

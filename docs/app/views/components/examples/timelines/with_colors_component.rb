@@ -6,19 +6,19 @@ module Examples
       end
 
       def example
-        Timeline :vertical do
+        Timeline :vertical do |timeline|
           li do
-            Timeline.new.start class: "timeline-box" do
+            timeline.start class: "timeline-box" do
               "Complete"
             end
-            Timeline.new.middle class: "text-primary"
+            timeline.middle class: "text-primary"
             hr class: "bg-primary"
           end
 
           li do
             hr class: "bg-primary"
-            Timeline.new.middle class: "text-primary"
-            Timeline.new.end class: "timeline-box" do
+            timeline.middle class: "text-primary"
+            timeline.end class: "timeline-box" do
               "In Progress"
             end
             hr class: "bg-primary"
@@ -26,8 +26,8 @@ module Examples
 
           li do
             hr class: "bg-primary"
-            Timeline.new.middle
-            Timeline.new.start class: "timeline-box" do
+            timeline.middle
+            timeline.start class: "timeline-box" do
               "Pending"
             end
             hr
@@ -35,8 +35,8 @@ module Examples
 
           li do
             hr
-            Timeline.new.middle
-            Timeline.new.end class: "timeline-box" do
+            timeline.middle
+            timeline.end class: "timeline-box" do
               "Not Started"
             end
           end

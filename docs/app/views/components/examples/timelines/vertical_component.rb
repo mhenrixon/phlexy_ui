@@ -6,13 +6,13 @@ module Examples
       end
 
       def example
-        Timeline :vertical do
+        Timeline :vertical do |timeline|
           li do
-            Timeline.new.start do
+            timeline.start do
               "1984"
             end
-            Timeline.new.middle
-            Timeline.new.end class: "timeline-box" do
+            timeline.middle
+            timeline.end class: "timeline-box" do
               "First Macintosh computer"
             end
             hr
@@ -20,11 +20,11 @@ module Examples
 
           li do
             hr
-            Timeline.new.start do
+            timeline.start do
               "1998"
             end
-            Timeline.new.middle
-            Timeline.new.end class: "timeline-box" do
+            timeline.middle
+            timeline.end class: "timeline-box" do
               "iMac"
             end
             hr
@@ -32,11 +32,11 @@ module Examples
 
           li do
             hr
-            Timeline.new.start do
+            timeline.start do
               "2001"
             end
-            Timeline.new.middle
-            Timeline.new.end class: "timeline-box" do
+            timeline.middle
+            timeline.end class: "timeline-box" do
               "iPod"
             end
             hr
@@ -44,11 +44,11 @@ module Examples
 
           li do
             hr
-            Timeline.new.start do
+            timeline.start do
               "2007"
             end
-            Timeline.new.middle
-            Timeline.new.end class: "timeline-box" do
+            timeline.middle
+            timeline.end class: "timeline-box" do
               "iPhone"
             end
             hr
@@ -56,11 +56,11 @@ module Examples
 
           li do
             hr
-            Timeline.new.start do
+            timeline.start do
               "2015"
             end
-            Timeline.new.middle
-            Timeline.new.end class: "timeline-box" do
+            timeline.middle
+            timeline.end class: "timeline-box" do
               "Apple Watch"
             end
           end

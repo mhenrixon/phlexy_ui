@@ -8,11 +8,15 @@ module DaisyUI
       super
     end
 
-    def view_template(&)
+    def view_template
       if tap_to_close?
-        details(class: classes, **attributes, &)
+        details(class: classes, **attributes) do
+          yield self if block_given?
+        end
       else
-        public_send(as, class: classes, **attributes, &)
+        public_send(as, class: classes, **attributes) do
+          yield self if block_given?
+        end
       end
     end
 
