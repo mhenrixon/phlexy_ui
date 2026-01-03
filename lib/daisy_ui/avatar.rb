@@ -9,27 +9,27 @@ module DaisyUI
     end
 
     register_modifiers(
-      # "sm:online"
-      # "@sm:online"
-      # "md:online"
-      # "@md:online"
-      # "lg:online"
-      # "@lg:online"
-      online: "online",
-      # "sm:offline"
-      # "@sm:offline"
-      # "md:offline"
-      # "@md:offline"
-      # "lg:offline"
-      # "@lg:offline"
-      offline: "offline",
-      # "sm:placeholder"
-      # "@sm:placeholder"
-      # "md:placeholder"
-      # "@md:placeholder"
-      # "lg:placeholder"
-      # "@lg:placeholder"
-      placeholder: "placeholder"
+      # "sm:avatar-online"
+      # "@sm:avatar-online"
+      # "md:avatar-online"
+      # "@md:avatar-online"
+      # "lg:avatar-online"
+      # "@lg:avatar-online"
+      online: "avatar-online",
+      # "sm:avatar-offline"
+      # "@sm:avatar-offline"
+      # "md:avatar-offline"
+      # "@md:avatar-offline"
+      # "lg:avatar-offline"
+      # "@lg:avatar-offline"
+      offline: "avatar-offline",
+      # "sm:avatar-placeholder"
+      # "@sm:avatar-placeholder"
+      # "md:avatar-placeholder"
+      # "@md:avatar-placeholder"
+      # "lg:avatar-placeholder"
+      # "@lg:avatar-placeholder"
+      placeholder: "avatar-placeholder"
     )
   end
 end

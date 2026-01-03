@@ -30,6 +30,14 @@ module DaisyUI
     end
 
     register_modifiers(
+      # Colors
+      # "sm:checkbox-neutral"
+      # "@sm:checkbox-neutral"
+      # "md:checkbox-neutral"
+      # "@md:checkbox-neutral"
+      # "lg:checkbox-neutral"
+      # "@lg:checkbox-neutral"
+      neutral: "checkbox-neutral",
       # "sm:checkbox-primary"
       # "@sm:checkbox-primary"
       # "md:checkbox-primary"
@@ -79,20 +87,14 @@ module DaisyUI
       # "lg:checkbox-error"
       # "@lg:checkbox-error"
       error: "checkbox-error",
-      # "sm:checkbox-lg"
-      # "@sm:checkbox-lg"
-      # "md:checkbox-lg"
-      # "@md:checkbox-lg"
-      # "lg:checkbox-lg"
-      # "@lg:checkbox-lg"
-      lg: "checkbox-lg",
-      # "sm:checkbox-md"
-      # "@sm:checkbox-md"
-      # "md:checkbox-md"
-      # "@md:checkbox-md"
-      # "lg:checkbox-md"
-      # "@lg:checkbox-md"
-      md: "checkbox-md",
+      # Sizes
+      # "sm:checkbox-xs"
+      # "@sm:checkbox-xs"
+      # "md:checkbox-xs"
+      # "@md:checkbox-xs"
+      # "lg:checkbox-xs"
+      # "@lg:checkbox-xs"
+      xs: "checkbox-xs",
       # "sm:checkbox-sm"
       # "@sm:checkbox-sm"
       # "md:checkbox-sm"
@@ -100,13 +102,27 @@ module DaisyUI
       # "lg:checkbox-sm"
       # "@lg:checkbox-sm"
       sm: "checkbox-sm",
-      # "sm:checkbox-xs"
-      # "@sm:checkbox-xs"
-      # "md:checkbox-xs"
-      # "@md:checkbox-xs"
-      # "lg:checkbox-xs"
-      # "@lg:checkbox-xs"
-      xs: "checkbox-xs"
+      # "sm:checkbox-md"
+      # "@sm:checkbox-md"
+      # "md:checkbox-md"
+      # "@md:checkbox-md"
+      # "lg:checkbox-md"
+      # "@lg:checkbox-md"
+      md: "checkbox-md",
+      # "sm:checkbox-lg"
+      # "@sm:checkbox-lg"
+      # "md:checkbox-lg"
+      # "@md:checkbox-lg"
+      # "lg:checkbox-lg"
+      # "@lg:checkbox-lg"
+      lg: "checkbox-lg",
+      # "sm:checkbox-xl"
+      # "@sm:checkbox-xl"
+      # "md:checkbox-xl"
+      # "@md:checkbox-xl"
+      # "lg:checkbox-xl"
+      # "@lg:checkbox-xl"
+      xl: "checkbox-xl"
     )
   end
 end

@@ -14,7 +14,7 @@ describe DaisyUI::Avatar do
 
         it "renders it separately with a responsive prefix" do
           expected_html = html <<~HTML
-            <div class="avatar online #{viewport}:placeholder"></div>
+            <div class="avatar avatar-online #{viewport}:avatar-placeholder"></div>
           HTML
 
           expect(output).to eq(expected_html)
@@ -28,7 +28,7 @@ describe DaisyUI::Avatar do
 
         it "renders it separately with a responsive prefix" do
           expected_html = html <<~HTML
-            <div class="avatar online #{viewport}:placeholder #{viewport}:offline"></div>
+            <div class="avatar avatar-online #{viewport}:avatar-placeholder #{viewport}:avatar-offline"></div>
           HTML
 
           expect(output).to eq(expected_html)
@@ -56,7 +56,7 @@ describe DaisyUI::Avatar do
 
     it "is expected to match the formatted HTML" do
       expected_html = html <<~HTML
-        <div class="avatar online placeholder">
+        <div class="avatar avatar-online avatar-placeholder">
           <div class="w-24 rounded">
             <img src="some-image.jpg">
           </div>
