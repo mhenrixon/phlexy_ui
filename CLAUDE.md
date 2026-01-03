@@ -2,96 +2,123 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Common Development Commands
+## Repository Structure
 
-### Testing
+This is a monorepo containing:
+- **Root**: The DaisyUI Ruby gem (Phlex components wrapping DaisyUI)
+- **docs/**: Documentation website (Rails 8.1+ app showcasing components)
 
-- Run all tests: `bundle exec rspec`
-- Run a specific test file: `bundle exec rspec spec/lib/phlexy_ui/button_spec.rb`
-- Run tests with documentation format: `bundle exec rspec --format documentation`
+## Quick Reference
 
-### Linting
+```bash
+# Gem development (from root)
+bundle exec rspec              # Run gem tests
+bundle exec rubocop            # Lint gem code
+bin/console                    # Interactive console
 
-- Run linter: `bundle exec standardrb`
-- Auto-fix linting issues: `bundle exec standardrb --fix`
+# Docs development (from docs/)
+bin/dev                        # Start dev server
+bundle exec rspec              # Run docs tests (includes Playwright)
+bundle exec standardrb         # Lint docs code
+bun run build:css              # Build Tailwind CSS
+```
 
-### Console
+## MCP Server: daisyUI Snippets
 
-- Interactive console: `bin/console`
+The `mcp__daisyui__daisyUI-Snippets` tool provides official DaisyUI component snippets. Use it when:
+- Creating new components
+- Checking correct DaisyUI class names
+- Looking up component structure and modifiers
 
-### Building and Releasing
+Example: To get button snippet, call with `{"components": {"button": true}}`
 
-- Build gem: `gem build phlexy_ui.gemspec`
-- Bump version: `rake release:bump_version VERSION=x.x.x`
-- Publish new version: `rake release:publish`
+## Gem Architecture
 
-## Architecture Overview
+### Component Structure
+- All components inherit from `DaisyUI::Base` (`lib/daisy_ui/base.rb`)
+- Components use the `register_modifiers` method to map symbols to CSS classes
+- The module uses `Phlex::Kit` for short-form syntax
 
-PhlexyUI is a Ruby UI component library that wraps DaisyUI components using the Phlex framework. Understanding this architecture requires knowledge of:
+### Key Patterns
 
-1. **Phlex**: A Ruby gem for building HTML components using Ruby classes. Components inherit from `Phlex::HTML` and use Ruby methods to generate HTML.
+```ruby
+# Modifier registration with REQUIRED responsive comments
+register_modifiers(
+  # "sm:btn-primary" "md:btn-primary" "lg:btn-primary"
+  primary: "btn-primary",
+  # "sm:btn-lg" "md:btn-lg" "lg:btn-lg"
+  lg: "btn-lg"
+)
+```
 
-2. **DaisyUI**: A Tailwind CSS component library that provides pre-styled components through CSS classes.
+**CRITICAL**: Always include responsive variant comments (sm:, md:, lg:) above each modifier. Tailwind CSS needs these to generate responsive classes.
 
-3. **Component Structure**:
+### Adding a New Component
 
-   - All components inherit from `PhlexyUI::Base` (defined in `lib/phlexy_ui/base.rb`)
-   - `PhlexyUI::Base` inherits from `Phlex::HTML` and provides common functionality
-   - Components are automatically loaded via Zeitwerk
-   - The module uses `Phlex::Kit` to enable short-form syntax when included
+1. Create component file: `lib/daisy_ui/component_name.rb`
+2. Inherit from `DaisyUI::Base`
+3. Use `register_modifiers` with responsive comments
+4. Create spec: `spec/lib/daisy_ui/component_name_spec.rb`
+5. Add example in docs: `bin/rails generate example_view ComponentName Category`
 
-4. **Key Base Class Features**:
+## Docs Architecture
 
-   - **Modifiers System**: Components accept modifier symbols (e.g., `:primary`, `:large`) that map to DaisyUI CSS classes
-   - **Options Handling**: Additional HTML attributes and classes via the `options` hash
-   - **Class Generation**: The `generate_classes!` method builds the final CSS class list
-   - **Attribute Generation**: The `generate_attributes` method handles data attributes and other HTML attributes
-   - **Render Delegation**: The `render_as` method allows components to be rendered as different elements or components
+### View System (Phlex-Rails)
+All views are Ruby classes. Structure:
+```
+docs/app/views/
+├── examples/                    # Component example pages
+│   └── buttons/show_view.rb     # ShowView renders all examples
+├── components/examples/         # Individual example components
+│   └── buttons/basic_component.rb
+└── layouts/                     # Layout components
+```
 
-5. **Configuration System** (`lib/phlexy_ui/configurable.rb`):
+### Generators
+```bash
+# Add new component page
+bin/rails generate example_view Menu Navigation
 
-   - Global configuration via `PhlexyUI.configure`
-   - Custom modifiers can be added globally or per-component
-   - Prefix support for CSS classes
-
-6. **Component Patterns**:
-
-   - Components typically have a main rendering method and may yield to blocks
-   - Many components support nested sub-components (e.g., Card with card.body, card.title)
-   - CSS classes are generated based on the component type and modifiers passed
-
-7. **Responsive Class Comments**:
-   - All modifier mappings must include comments with responsive variants (sm:, md:, lg:)
-   - This is because Tailwind CSS cannot execute Ruby code to discover dynamically generated classes
-   - Without these comments, Tailwind won't generate the CSS for responsive modifiers
-   - Example from `card.rb`:
-     ```ruby
-     register_modifiers(
-       # "sm:card-bordered"
-       # "md:card-bordered"
-       # "lg:card-bordered"
-       bordered: "card-bordered",
-       # "sm:bg-primary sm:text-primary-content"
-       # "md:bg-primary md:text-primary-content"
-       # "lg:bg-primary lg:text-primary-content"
-       primary: "bg-primary text-primary-content"
-     )
-     ```
-
-## Testing Approach
-
-- Uses RSpec with Phlex testing helpers
-- Tests verify HTML output structure and CSS classes
-- Test files mirror the component structure in `spec/lib/phlexy_ui/`
-- Support files in `spec/support/` provide testing utilities
+# Add example to existing component
+bin/rails generate example_component Menus::Responsive "Title"
+```
 
 ## Development Workflow
 
-When creating or modifying components:
+### When modifying a gem component:
+1. Check DaisyUI docs for correct classes: use `mcp__daisyui__daisyUI-Snippets`
+2. Update modifier mappings with responsive comments
+3. Run gem tests: `bundle exec rspec`
+4. Update docs examples if needed
+5. Run docs tests: `cd docs && bundle exec rspec`
 
-1. Check existing components for patterns and conventions
-2. Ensure proper modifier mappings for DaisyUI classes
-3. **Always include responsive variant comments** above each modifier (sm:, md:, lg:)
-4. Write tests that verify HTML structure and CSS classes
-5. Run linter to ensure code style consistency
-6. Update version and timestamp when releasing
+### When adding a new component:
+1. Get DaisyUI snippet for reference
+2. Create gem component with tests
+3. Create docs example with generator
+4. Run full test suite
+
+## Testing
+
+### Gem Tests
+```bash
+bundle exec rspec                                    # All tests
+bundle exec rspec spec/lib/daisy_ui/button_spec.rb  # Single file
+bundle exec rspec --format documentation             # Verbose output
+```
+
+### Docs Tests (with Playwright)
+```bash
+cd docs
+bundle exec rspec                        # All tests including system tests
+bundle exec rspec spec/system/           # Only system tests
+HEADLESS=false bundle exec rspec         # Watch browser tests run
+```
+
+## CI Pipeline
+
+All jobs run in parallel:
+- `lint`: RuboCop on gem
+- `gem-test`: Gem specs on Ruby 3.2, 3.3, 3.4, 4.0
+- `docs-lint`: StandardRB, Biome, Stylelint on docs
+- `docs-test`: Playwright browser tests on docs
