@@ -49,12 +49,33 @@ module DaisyUI
     end
 
     register_modifiers(
-        # "sm:dropdown-end"
-        # "@sm:dropdown-end"
-        # "md:dropdown-end"
-        # "@md:dropdown-end"
-        # "lg:dropdown-end"
-        # "@lg:dropdown-end"
+      # Placement
+      # "sm:dropdown-start"
+      # "@sm:dropdown-start"
+      # "md:dropdown-start"
+      # "@md:dropdown-start"
+      # "lg:dropdown-start"
+      # "@lg:dropdown-start"
+      # "xl:dropdown-start"
+      # "@xl:dropdown-start"
+      start: "dropdown-start",
+      # "sm:dropdown-center"
+      # "@sm:dropdown-center"
+      # "md:dropdown-center"
+      # "@md:dropdown-center"
+      # "lg:dropdown-center"
+      # "@lg:dropdown-center"
+      # "xl:dropdown-center"
+      # "@xl:dropdown-center"
+      center: "dropdown-center",
+      # "sm:dropdown-end"
+      # "@sm:dropdown-end"
+      # "md:dropdown-end"
+      # "@md:dropdown-end"
+      # "lg:dropdown-end"
+      # "@lg:dropdown-end"
+      # "xl:dropdown-end"
+      # "@xl:dropdown-end"
       end: "dropdown-end",
       # "sm:dropdown-top"
       # "@sm:dropdown-top"
@@ -62,6 +83,8 @@ module DaisyUI
       # "@md:dropdown-top"
       # "lg:dropdown-top"
       # "@lg:dropdown-top"
+      # "xl:dropdown-top"
+      # "@xl:dropdown-top"
       top: "dropdown-top",
       # "sm:dropdown-bottom"
       # "@sm:dropdown-bottom"
@@ -69,6 +92,8 @@ module DaisyUI
       # "@md:dropdown-bottom"
       # "lg:dropdown-bottom"
       # "@lg:dropdown-bottom"
+      # "xl:dropdown-bottom"
+      # "@xl:dropdown-bottom"
       bottom: "dropdown-bottom",
       # "sm:dropdown-left"
       # "@sm:dropdown-left"
@@ -76,6 +101,8 @@ module DaisyUI
       # "@md:dropdown-left"
       # "lg:dropdown-left"
       # "@lg:dropdown-left"
+      # "xl:dropdown-left"
+      # "@xl:dropdown-left"
       left: "dropdown-left",
       # "sm:dropdown-right"
       # "@sm:dropdown-right"
@@ -83,13 +110,18 @@ module DaisyUI
       # "@md:dropdown-right"
       # "lg:dropdown-right"
       # "@lg:dropdown-right"
+      # "xl:dropdown-right"
+      # "@xl:dropdown-right"
       right: "dropdown-right",
+      # Behavior
       # "sm:dropdown-hover"
       # "@sm:dropdown-hover"
       # "md:dropdown-hover"
       # "@md:dropdown-hover"
       # "lg:dropdown-hover"
       # "@lg:dropdown-hover"
+      # "xl:dropdown-hover"
+      # "@xl:dropdown-hover"
       hover: "dropdown-hover",
       # "sm:dropdown-open"
       # "@sm:dropdown-open"
@@ -97,6 +129,8 @@ module DaisyUI
       # "@md:dropdown-open"
       # "lg:dropdown-open"
       # "@lg:dropdown-open"
+      # "xl:dropdown-open"
+      # "@xl:dropdown-open"
       open: "dropdown-open"
     )
   end
