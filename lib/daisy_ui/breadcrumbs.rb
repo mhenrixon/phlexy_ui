@@ -15,7 +15,7 @@ module DaisyUI
         if href
           a(href: href, &block)
         else
-          block.call
+          yield
         end
       end
     end
