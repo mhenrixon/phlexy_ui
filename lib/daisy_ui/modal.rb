@@ -42,34 +42,62 @@ module DaisyUI
     end
 
     register_modifiers(
+      # Modifier
       # "sm:modal-open"
       # "@sm:modal-open"
       # "md:modal-open"
       # "@md:modal-open"
       # "lg:modal-open"
       # "@lg:modal-open"
+      # "xl:modal-open"
+      # "@xl:modal-open"
       open: "modal-open",
+      # Placement
       # "sm:modal-top"
       # "@sm:modal-top"
       # "md:modal-top"
       # "@md:modal-top"
       # "lg:modal-top"
       # "@lg:modal-top"
+      # "xl:modal-top"
+      # "@xl:modal-top"
       top: "modal-top",
-      # "sm:modal-bottom"
-      # "@sm:modal-bottom"
-      # "md:modal-bottom"
-      # "@md:modal-bottom"
-      # "lg:modal-bottom"
-      # "@lg:modal-bottom"
-      bottom: "modal-bottom",
       # "sm:modal-middle"
       # "@sm:modal-middle"
       # "md:modal-middle"
       # "@md:modal-middle"
       # "lg:modal-middle"
       # "@lg:modal-middle"
-      middle: "modal-middle"
+      # "xl:modal-middle"
+      # "@xl:modal-middle"
+      middle: "modal-middle",
+      # "sm:modal-bottom"
+      # "@sm:modal-bottom"
+      # "md:modal-bottom"
+      # "@md:modal-bottom"
+      # "lg:modal-bottom"
+      # "@lg:modal-bottom"
+      # "xl:modal-bottom"
+      # "@xl:modal-bottom"
+      bottom: "modal-bottom",
+      # "sm:modal-start"
+      # "@sm:modal-start"
+      # "md:modal-start"
+      # "@md:modal-start"
+      # "lg:modal-start"
+      # "@lg:modal-start"
+      # "xl:modal-start"
+      # "@xl:modal-start"
+      start: "modal-start",
+      # "sm:modal-end"
+      # "@sm:modal-end"
+      # "md:modal-end"
+      # "@md:modal-end"
+      # "lg:modal-end"
+      # "@lg:modal-end"
+      # "xl:modal-end"
+      # "@xl:modal-end"
+      end: "modal-end"
     )
   end
 end

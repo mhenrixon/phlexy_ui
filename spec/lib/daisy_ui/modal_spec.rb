@@ -5,6 +5,39 @@ require "spec_helper"
 describe DaisyUI::Modal do
   subject(:output) { render described_class.new(id: "test_modal") }
 
+  it "is expected to match the formatted HTML" do
+    expected_html = html <<~HTML
+      <dialog id="test_modal" class="modal"></dialog>
+    HTML
+
+    expect(output).to eq(expected_html)
+  end
+
+  describe "modifiers" do
+    {
+      # Modifier
+      open: "modal-open",
+      # Placement
+      top: "modal-top",
+      middle: "modal-middle",
+      bottom: "modal-bottom",
+      start: "modal-start",
+      end: "modal-end"
+    }.each do |modifier, css|
+      context "when given :#{modifier} modifier" do
+        subject(:output) { render described_class.new(modifier, id: "test_modal") }
+
+        it "renders it apart from the main class" do
+          expected_html = html <<~HTML
+            <dialog id="test_modal" class="modal #{css}"></dialog>
+          HTML
+
+          expect(output).to eq(expected_html)
+        end
+      end
+    end
+  end
+
   describe "responsiveness" do
     %i[sm md lg xl @sm @md @lg @xl].each do |viewport|
       context "when given an :#{viewport} responsive option as a single argument" do
