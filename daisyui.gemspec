@@ -10,7 +10,9 @@ Gem::Specification.new do |s|
   s.description = "DaisyUI is a comprehensive Ruby UI component library that brings DaisyUI's beautiful Tailwind CSS components to your Ruby applications using Phlex. Build modern, accessible web interfaces with ease."
   s.authors = ["Mikael Henriksson"]
   s.email = "mikael@zoolutions.llc"
-  s.files = Dir["lib/**/*.rb"]
+  s.files = Dir["lib/**/*.rb"] + Dir["exe/*"]
+  s.bindir = "exe"
+  s.executables = ["daisyui-mcp"]
   s.homepage = "https://github.com/mhenrixon/daisyui"
   s.metadata = {
     "homepage_uri" => "https://github.com/mhenrixon/daisyui",

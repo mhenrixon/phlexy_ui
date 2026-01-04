@@ -152,6 +152,31 @@ plugins: [
 ],
 ```
 
+# MCP Server (Claude Code Integration)
+
+This gem includes an MCP (Model Context Protocol) server that provides component information to AI assistants like Claude Code.
+
+## Setup
+
+Add to your Claude Code MCP settings (`~/.claude.json` or project `.claude.json`):
+
+```json
+{
+  "mcpServers": {
+    "daisyui": {
+      "command": "bundle",
+      "args": ["exec", "daisyui-mcp"]
+    }
+  }
+}
+```
+
+## Available Tools
+
+- **list_components** - List all available DaisyUI components
+- **get_component** - Get detailed info about a specific component (modifiers, usage examples)
+- **search_components** - Search components by name or modifier
+
 # Usage
 
 Refer to [the docs](https://daisyui.phlex.fun) to see how to use components. Here's an example:
