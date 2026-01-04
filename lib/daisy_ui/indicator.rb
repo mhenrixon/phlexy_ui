@@ -5,12 +5,27 @@ module DaisyUI
   class Indicator < Base
     self.component_class = :indicator
 
-    def view_template(&)
-      public_send(as, class: classes, **attributes, &)
+    def view_template
+      public_send(as, class: classes, **attributes) do
+        yield self if block_given?
+      end
     end
 
-    def item(**options, &)
-      span(class: component_classes("indicator-item", options:), **options, &)
+    def item(*item_modifiers, **options, &)
+      item_classes = build_item_classes(item_modifiers, options)
+      span(class: item_classes, **options, &)
+    end
+
+    private
+
+    def build_item_classes(item_modifiers, options)
+      # Start with base class
+      base = apply_prefix("indicator-item")
+      # Add modifier classes from position modifiers
+      mod_classes = item_modifiers.filter_map { |m| apply_prefix(modifier_map[m]) }
+      # Add custom class if provided
+      custom = options.delete(:class)
+      merge_classes(base, *mod_classes, custom)
     end
 
     register_modifiers(

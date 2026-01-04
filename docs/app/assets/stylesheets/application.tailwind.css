@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/* Import DaisyUI */
+@plugin "daisyui" {
+  themes: all;
+}
+
+/* Import Tailwind plugins */
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/container-queries";
+@plugin "@tailwindcss/aspect-ratio";
+
+/* Configure content sources */
+@source "../../../app/views/**/*.{rb,erb,haml,html,slim}";
+@source "../../../app/helpers/**/*.rb";
+@source "../../../app/javascript/**/*.js";
+@source "../../../public/*.html";
+
+/* Include DaisyUI gem for class name extraction */
+@source "../../../.bundle/gems/daisyui*/**/*.rb";
+
+/* Theme configuration */
+@theme {
+  --font-family-sans: "Inter var", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Custom styles */
+.field_with_errors {
+  width: inherit;
+  height: inherit;
+  display: contents;
+}
+
+/* Override @tailwindcss/forms checkbox styles for DaisyUI components */
+.toggle,
+.checkbox,
+.radio {
+  background-image: none !important;
+}
+
+.toggle:checked,
+.checkbox:checked,
+.radio:checked {
+  background-image: none !important;
+}
+
+/* Responsive drawer-open - outside layers for highest specificity */
+@media (width >= 1024px) {
+  .lg\:drawer-open {
+    display: grid !important;
+    grid-auto-columns: max-content auto !important;
+  }
+
+  .lg\:drawer-open > .drawer-toggle {
+    display: none !important;
+  }
+
+  .lg\:drawer-open > .drawer-toggle ~ .drawer-side,
+  .lg\:drawer-open > .drawer-side {
+    pointer-events: auto !important;
+    visibility: visible !important;
+    position: sticky !important;
+    top: 0 !important;
+    display: block !important;
+    width: auto !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    overscroll-behavior: auto !important;
+    opacity: 1 !important;
+    overflow-y: auto !important;
+  }
+
+  .lg\:drawer-open > .drawer-side > .drawer-overlay {
+    cursor: default !important;
+    background-color: transparent !important;
+  }
+}

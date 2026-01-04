@@ -14,18 +14,25 @@ module DaisyUI
     def view_template(&block)
       public_send(as, class: classes, **attributes) do
         input(type: :radio, name:, checked:)
-        div(class: "collapse-title", &title_block) if title_block
+        div(class: build_title_classes, &title_block) if title_block
         div(class: "collapse-content", &block) if block
       end
     end
 
-    def title(&block)
+    def title(**options, &block)
+      @title_options = options
       @title_block = block
     end
 
     private
 
-    attr_reader :name, :checked, :title_block
+    attr_reader :name, :checked, :title_block, :title_options
+
+    def build_title_classes
+      classes = ["collapse-title"]
+      classes << title_options.delete(:class) if title_options&.dig(:class)
+      classes.compact.join(" ")
+    end
 
     register_modifiers(
       # "sm:collapse-arrow"

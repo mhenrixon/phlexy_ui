@@ -5,8 +5,10 @@ module DaisyUI
   class Hero < Base
     self.component_class = :hero
 
-    def view_template(&)
-      public_send(as, class: classes, **attributes, &)
+    def view_template
+      public_send(as, class: classes, **attributes) do
+        yield self if block_given?
+      end
     end
 
     def content(**options, &)

@@ -1,4 +1,4 @@
-name: Ruby
+name: CI
 
 on:
   push:
@@ -19,11 +19,11 @@ jobs:
           ruby-version: 4.0
           bundler-cache: true
       - name: Run RuboCop
-        run: bundle exec rubocop
+        run: bundle exec rubocop lib spec
 
-  test:
+  gem-test:
     runs-on: ubuntu-latest
-    name: Ruby ${{ matrix.ruby }}
+    name: Gem Tests (Ruby ${{ matrix.ruby }})
     strategy:
       fail-fast: false
       matrix:
@@ -42,3 +42,106 @@ jobs:
           bundler-cache: true
       - name: Run specs
         run: bundle exec rspec
+
+  docs-lint:
+    runs-on: ubuntu-latest
+    name: Docs Lint
+    defaults:
+      run:
+        working-directory: docs
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 4.0
+          bundler-cache: true
+          working-directory: docs
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: "1.3.2"
+
+      - name: Install JS Dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Lint Ruby
+        run: bin/rubocop
+
+      - name: Lint JavaScript
+        run: bun run lint:js
+
+      - name: Lint CSS
+        run: bun run lint:css
+
+  docs-test:
+    runs-on: ubuntu-latest
+    name: Docs Tests
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: docs
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 4.0
+          bundler-cache: true
+          working-directory: docs
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: "1.3.2"
+
+      - name: Install JS Dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        id: playwright-cache
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('docs/bun.lock') }}
+          restore-keys: |
+            playwright-${{ runner.os }}-
+
+      - name: Install Playwright browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        timeout-minutes: 5
+        run: bunx --bun playwright install chromium
+
+      - name: Install Playwright system dependencies
+        timeout-minutes: 3
+        run: sudo bunx --bun playwright install-deps chromium 2>/dev/null || true
+
+      - name: Install libvips
+        run: sudo apt-get update && sudo apt-get install -y libvips42
+
+      - name: Build CSS
+        run: bun run build:css
+
+      - name: Setup database
+        run: |
+          bin/rails db:create db:migrate
+
+      - name: Precompile assets
+        run: bin/rails assets:precompile
+
+      - name: Run RSpec tests
+        env:
+          RAILS_ENV: test
+          HEADLESS: "true"
+        run: bundle exec rspec
+
+      - name: Archive Playwright failure screenshots
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-screenshots
+          path: docs/tmp/capybara/screenshots/*.png
+          if-no-files-found: ignore

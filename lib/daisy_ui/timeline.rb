@@ -9,8 +9,10 @@ module DaisyUI
       super
     end
 
-    def view_template(&)
-      public_send(as, class: classes, **attributes, &)
+    def view_template
+      public_send(as, class: classes, **attributes) do
+        yield self if block_given?
+      end
     end
 
     def start(**options, &)

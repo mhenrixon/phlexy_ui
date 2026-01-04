@@ -26,7 +26,7 @@ describe DaisyUI::AvatarGroup do
     it "is expected to match the formatted HTML" do
       expected_html = html <<~HTML
         <span class="avatar-group">
-          <div class="avatar online">JD</div>
+          <div class="avatar avatar-online">JD</div>
           <div class="avatar">AB</div>
         </span>
       HTML

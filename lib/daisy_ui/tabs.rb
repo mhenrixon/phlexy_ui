@@ -9,8 +9,10 @@ module DaisyUI
       @id = id
     end
 
-    def view_template(&)
-      public_send(as, role: :tablist, class: classes, **attributes, &)
+    def view_template
+      public_send(as, role: :tablist, class: classes, **attributes) do
+        yield self if block_given?
+      end
     end
 
     def tab(*args, label: nil, **, &)

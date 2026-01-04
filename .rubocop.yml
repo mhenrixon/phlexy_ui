@@ -8,6 +8,8 @@ AllCops:
   DisabledByDefault: false
   DisplayCopNames: true
   NewCops: enable
+  Exclude:
+    - "docs/**/*"
 
 #===============
 #=== LAYOUT ===
@@ -55,13 +57,7 @@ Layout/LineContinuationLeadingSpace:
   Enabled: false
 
 Layout/LineLength:
-  AllowHeredoc: true
-  AllowURI: true
   Enabled: false
-  AllowCopDirectives: true
-  Max: 125
-  AllowedPatterns:
-    - '\A\s*#\s*'
 
 Layout/MultilineHashBraceLayout:
   EnforcedStyle: symmetrical
